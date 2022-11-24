@@ -1,5 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.SourceLink.GitHub.1.1.1\build\Microsoft.SourceLink.GitHub.props" Condition="Exists('..\packages\Microsoft.SourceLink.GitHub.1.1.1\build\Microsoft.SourceLink.GitHub.props')" />
+  <Import Project="..\packages\Microsoft.SourceLink.Common.1.1.1\build\Microsoft.SourceLink.Common.props" Condition="Exists('..\packages\Microsoft.SourceLink.Common.1.1.1\build\Microsoft.SourceLink.Common.props')" />
+  <Import Project="..\packages\Microsoft.Build.Tasks.Git.1.1.1\build\Microsoft.Build.Tasks.Git.props" Condition="Exists('..\packages\Microsoft.Build.Tasks.Git.1.1.1\build\Microsoft.Build.Tasks.Git.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -82,8 +85,50 @@
     <Reference Include="EPPlus.System.Drawing, Version=6.0.0.0, Culture=neutral, PublicKeyToken=2308d35469c9bac0, processorArchitecture=MSIL">
       <HintPath>..\packages\EPPlus.System.Drawing.6.0.0\lib\net452\EPPlus.System.Drawing.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.AspNetCore.Hosting.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Hosting.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Hosting.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Hosting.Server.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Hosting.Server.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Http.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Http.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http.Extensions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Http.Extensions.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http.Features, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Http.Features.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Http.Features.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Rewrite, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Rewrite.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Rewrite.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileProviders.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.FileProviders.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.FileProviders.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Hosting.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Hosting.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Hosting.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=1.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.IO.RecyclableMemoryStream.1.4.1\lib\net46\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Net.Http.Headers, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.Headers.2.2.0\lib\netstandard2.0\Microsoft.Net.Http.Headers.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
@@ -108,21 +153,43 @@
       <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
     <Reference Include="System.Collections.NonGeneric, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Collections.NonGeneric.4.3.0\lib\net46\System.Collections.NonGeneric.dll</HintPath>
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.4.5.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Memory, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.1\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
     <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.4.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.1\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
     <Reference Include="System.Security" />
+    <Reference Include="System.Text.Encodings.Web, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.4.5.0\lib\netstandard2.0\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
     <Reference Include="System.Threading.Tasks" />
     <Reference Include="System.Transactions" />
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -135,11 +202,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BUS\ChuongTrinhKhuyenMaiBUS.cs" />
+    <Compile Include="BUS\CTCTKhuyenMaiBUS.cs" />
     <Compile Include="BUS\CTHoaDonBUS.cs" />
     <Compile Include="BUS\CTPhieuNhapBUS.cs" />
-    <Compile Include="BUS\CT_ChuongTrinhKhuyenMaiBUS.cs" />
     <Compile Include="BUS\HoaDonBUS.cs" />
+    <Compile Include="BUS\KhachHangBUS.cs" />
+    <Compile Include="BUS\KhuyenMaiBUS.cs" />
     <Compile Include="BUS\LoaiSanPhamBUS.cs" />
     <Compile Include="BUS\NhaCungCapBUS.cs" />
     <Compile Include="BUS\NhanVienBUS.cs" />
@@ -147,12 +215,13 @@
     <Compile Include="BUS\SanPhamBUS.cs" />
     <Compile Include="BUS\TaiKhoanBUS.cs" />
     <Compile Include="BUS\ThongKeBUS.cs" />
-    <Compile Include="DAO\ChuongTrinhKhuyenMaiDAO.cs" />
     <Compile Include="DAO\Connection.cs" />
+    <Compile Include="DAO\CTCTKhuyenMaiDAO.cs" />
     <Compile Include="DAO\CTHoaDonDAO.cs" />
     <Compile Include="DAO\CTPhieuNhapDAO.cs" />
-    <Compile Include="DAO\CT_ChuongTrinhKhuyenMaiDAO.cs" />
     <Compile Include="DAO\HoaDonDAO.cs" />
+    <Compile Include="DAO\KhachHangDAO.cs" />
+    <Compile Include="DAO\KhuyenMaiDAO.cs" />
     <Compile Include="DAO\LoaiSanPhamDAO.cs" />
     <Compile Include="DAO\NhaCungCapDAO.cs" />
     <Compile Include="DAO\NhanVienDAO.cs" />
@@ -160,20 +229,17 @@
     <Compile Include="DAO\SanPhamDAO.cs" />
     <Compile Include="DAO\TaiKhoanDAO.cs" />
     <Compile Include="DAO\ThongKeDAO.cs" />
-    <Compile Include="DTO\ChuongTrinhKhuyenMai.cs" />
-    <Compile Include="DTO\CTChuongTrinhKhuyenMai.cs" />
-    <Compile Include="DTO\CTHoaDon.cs" />
+    <Compile Include="DTO\CTCTKhuyenMaiDTO.cs" />
     <Compile Include="DTO\CTHoaDonDTO.cs" />
     <Compile Include="DTO\CTPhieuNhapHang.cs" />
-    <Compile Include="DTO\HoaDon.cs" />
     <Compile Include="DTO\HoaDonDTO.cs" />
-    <Compile Include="DTO\KhachHang.cs" />
+    <Compile Include="DTO\KhachHangDTO.cs" />
+    <Compile Include="DTO\KhuyenMaiDTO.cs" />
     <Compile Include="DTO\loaiSanPham.cs" />
     <Compile Include="DTO\NhaCungCap.cs" />
     <Compile Include="DTO\NhanVien.cs" />
     <Compile Include="DTO\PhieuNhapHang.cs" />
     <Compile Include="DTO\SanPham.cs" />
-    <Compile Include="DTO\SanPhamDTO.cs" />
     <Compile Include="DTO\TaiKhoan.cs" />
     <Compile Include="DTO\ThoiGian.cs" />
     <Compile Include="DTO\ThongKeDTO.cs" />
@@ -182,6 +248,12 @@
     </Compile>
     <Compile Include="FormNhanVien.Designer.cs">
       <DependentUpon>FormNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormReportPhieuNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReportPhieuNhap.Designer.cs">
+      <DependentUpon>FormReportPhieuNhap.cs</DependentUpon>
     </Compile>
     <Compile Include="FormReportViewer.cs">
       <SubType>Form</SubType>
@@ -195,11 +267,35 @@
     <Compile Include="GUI\BanHang.Designer.cs">
       <DependentUpon>BanHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\ChonKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ChonKhachHang.Designer.cs">
+      <DependentUpon>ChonKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ChonKhuyenMai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ChonKhuyenMai.designer.cs">
+      <DependentUpon>ChonKhuyenMai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ChonLoaiSanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ChonLoaiSanPham.Designer.cs">
+      <DependentUpon>ChonLoaiSanPham.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\ChonNhaCungCap.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\ChonNhaCungCap.Designer.cs">
       <DependentUpon>ChonNhaCungCap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ChonNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ChonNhanVien.designer.cs">
+      <DependentUpon>ChonNhanVien.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\DangNhap.cs">
       <SubType>Form</SubType>
@@ -219,6 +315,29 @@
     <Compile Include="GUI\QuenMatKhau.Designer.cs">
       <DependentUpon>QuenMatKhau.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\reportHD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\reportHD.designer.cs">
+      <DependentUpon>reportHD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\SuaNhaCungCap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\SuaNhaCungCap.Designer.cs">
+      <DependentUpon>SuaNhaCungCap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ThemNhaCungCap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ThemNhaCungCap.Designer.cs">
+      <DependentUpon>ThemNhaCungCap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="QuanLySieuThiMiniDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -228,6 +347,21 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>QuanLySieuThiMiniDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLySieuThiMiniDataSet21.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLySieuThiMiniDataSet21.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLySieuThiMiniDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLySieuThiMiniDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLySieuThiMiniDataSet55.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLySieuThiMiniDataSet55.xsd</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="UserControl\UserCThongKe.cs">
@@ -241,12 +375,6 @@
     </Compile>
     <Compile Include="UserControl\UCNhapHang.Designer.cs">
       <DependentUpon>UCNhapHang.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControl\UCNhaCungCap.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControl\UCNhaCungCap.Designer.cs">
-      <DependentUpon>UCNhaCungCap.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControl\UCTaiKhoan.cs">
       <SubType>UserControl</SubType>
@@ -283,14 +411,29 @@
     <EmbeddedResource Include="FormNhanVien.resx">
       <DependentUpon>FormNhanVien.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormReportPhieuNhap.resx">
+      <DependentUpon>FormReportPhieuNhap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormReportViewer.resx">
       <DependentUpon>FormReportViewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\BanHang.resx">
       <DependentUpon>BanHang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ChonKhachHang.resx">
+      <DependentUpon>ChonKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ChonKhuyenMai.resx">
+      <DependentUpon>ChonKhuyenMai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ChonLoaiSanPham.resx">
+      <DependentUpon>ChonLoaiSanPham.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\ChonNhaCungCap.resx">
       <DependentUpon>ChonNhaCungCap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ChonNhanVien.resx">
+      <DependentUpon>ChonNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
@@ -301,29 +444,31 @@
     <EmbeddedResource Include="GUI\QuenMatKhau.resx">
       <DependentUpon>QuenMatKhau.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\reportHD.resx">
+      <DependentUpon>reportHD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\SuaNhaCungCap.resx">
+      <DependentUpon>SuaNhaCungCap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ThemNhaCungCap.resx">
+      <DependentUpon>ThemNhaCungCap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="GUI\QuanLy.resx">
       <DependentUpon>QuanLy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report1.rdlc" />
     <EmbeddedResource Include="Report2.rdlc" />
+    <EmbeddedResource Include="Report4.rdlc" />
     <EmbeddedResource Include="UserControl\UCCTKM.resx">
       <DependentUpon>UCCTKM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\UCNhapHang.resx">
       <DependentUpon>UCNhapHang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControl\UCNhaCungCap.resx">
-      <DependentUpon>UCNhaCungCap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\UCNhanVien.resx">
       <DependentUpon>UCNhanVien.cs</DependentUpon>
@@ -338,6 +483,83 @@
       <DependentUpon>UserCThongKe.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\BanHang.datasource" />
+    <None Include="Properties\DataSources\ChonNhaCungCap.datasource" />
+    <None Include="Properties\DataSources\DangNhap.datasource" />
+    <None Include="Properties\DataSources\FormNhanVien.datasource" />
+    <None Include="Properties\DataSources\FormReportViewer.datasource" />
+    <None Include="Properties\DataSources\Program.datasource" />
+    <None Include="Properties\DataSources\QuanLy.datasource" />
+    <None Include="Properties\DataSources\QuanLySieuThiMiniDataSet.datasource" />
+    <None Include="Properties\DataSources\QuanLySieuThiMiniDataSet.HoaDonDataTable.datasource" />
+    <None Include="Properties\DataSources\QuanLySieuThiMiniDataSet.HoaDonRow.datasource" />
+    <None Include="Properties\DataSources\QuanLySieuThiMiniDataSet.HoaDonRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\QuanLySieuThiMiniDataSet.HoaDonRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\QuanLySieuThiMiniDataSet1.datasource" />
+    <None Include="Properties\DataSources\QuanLySieuThiMiniDataSet1.NhanVienDataTable.datasource" />
+    <None Include="Properties\DataSources\QuanLySieuThiMiniDataSet1.NhanVienRow.datasource" />
+    <None Include="Properties\DataSources\QuanLySieuThiMiniDataSet1.NhanVienRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\QuanLySieuThiMiniDataSet1.NhanVienRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\SieuThiMini.BUS.ChuongTrinhKhuyenMaiBUS.datasource" />
+    <None Include="Properties\DataSources\SieuThiMini.BUS.CTHoaDonBUS.datasource" />
+    <None Include="Properties\DataSources\SieuThiMini.BUS.CTPhieuNhapBUS.datasource" />
+    <None Include="Properties\DataSources\SieuThiMini.BUS.CT_ChuongTrinhKhuyenMaiBUS.datasource" />
+    <None Include="Properties\DataSources\SieuThiMini.BUS.HoaDonBUS.datasource" />
+    <None Include="Properties\DataSources\SieuThiMini.BUS.LoaiSanPhamBUS.datasource" />
+    <None Include="Properties\DataSources\SieuThiMini.BUS.NhaCungCapBUS.datasource" />
+    <None Include="Properties\DataSources\SieuThiMini.BUS.NhanVienBUS.datasource" />
+    <None Include="Properties\DataSources\SieuThiMini.BUS.PhieuNhapBUS.datasource" />
+    <None Include="Properties\DataSources\SieuThiMini.BUS.SanPhamBUS.datasource" />
+    <None Include="Properties\DataSources\SieuThiMini.BUS.TaiKhoanBUS.datasource" />
+    <None Include="Properties\DataSources\SieuThiMini.BUS.ThongKeBUS.datasource" />
+    <None Include="Properties\DataSources\SieuThiMini.DAO.ChuongTrinhKhuyenMaiDAO.datasource" />
+    <None Include="Properties\DataSources\SieuThiMini.DAO.Connection.datasource" />
+    <None Include="Properties\DataSources\SieuThiMini.DAO.CTHoaDonDAO.datasource" />
+    <None Include="Properties\DataSources\SieuThiMini.DAO.CTPhieuNhapDAO.datasource" />
+    <None Include="Properties\DataSources\SieuThiMini.DAO.CT_ChuongTrinhKhuyenMaiDAO.datasource" />
+    <None Include="Properties\DataSources\SieuThiMini.DAO.HoaDonDAO.datasource" />
+    <None Include="Properties\DataSources\SieuThiMini.DAO.LoaiSanPhamDAO.datasource" />
+    <None Include="Properties\DataSources\SieuThiMini.DAO.NhaCungCapDAO.datasource" />
+    <None Include="Properties\DataSources\SieuThiMini.DAO.NhanVienDAO.datasource" />
+    <None Include="Properties\DataSources\SieuThiMini.DAO.PhieuNhapDAO.datasource" />
+    <None Include="Properties\DataSources\SieuThiMini.DAO.SanPhamDAO.datasource" />
+    <None Include="Properties\DataSources\SieuThiMini.DAO.TaiKhoanDAO.datasource" />
+    <None Include="Properties\DataSources\SieuThiMini.DAO.ThongKeDAO.datasource" />
+    <None Include="Properties\DataSources\SieuThiMini.DTO.ChuongTrinhKhuyenMai.datasource" />
+    <None Include="Properties\DataSources\SieuThiMini.DTO.CTChuongTrinhKhuyenMai.datasource" />
+    <None Include="Properties\DataSources\SieuThiMini.DTO.CTHoaDon.datasource" />
+    <None Include="Properties\DataSources\SieuThiMini.DTO.CTHoaDonDTO.datasource" />
+    <None Include="Properties\DataSources\SieuThiMini.DTO.CTPhieuNhapHang.datasource" />
+    <None Include="Properties\DataSources\SieuThiMini.DTO.HoaDon.datasource" />
+    <None Include="Properties\DataSources\SieuThiMini.DTO.HoaDonDTO.datasource" />
+    <None Include="Properties\DataSources\SieuThiMini.DTO.KhachHang.datasource" />
+    <None Include="Properties\DataSources\SieuThiMini.DTO.loaiSanPham.datasource" />
+    <None Include="Properties\DataSources\SieuThiMini.DTO.NhaCungCap.datasource" />
+    <None Include="Properties\DataSources\SieuThiMini.DTO.NhanVien.datasource" />
+    <None Include="Properties\DataSources\SieuThiMini.DTO.PhieuNhapHang.datasource" />
+    <None Include="Properties\DataSources\SieuThiMini.DTO.SanPham.datasource" />
+    <None Include="Properties\DataSources\SieuThiMini.DTO.SanPhamDTO.datasource" />
+    <None Include="Properties\DataSources\SieuThiMini.DTO.TaiKhoan.datasource" />
+    <None Include="Properties\DataSources\SieuThiMini.DTO.ThoiGian.datasource" />
+    <None Include="Properties\DataSources\SieuThiMini.DTO.ThongKeDTO.datasource" />
+    <None Include="Properties\DataSources\SieuThiMini.GUI.FormDLG_PhieuNhap.datasource" />
+    <None Include="Properties\DataSources\SieuThiMini.GUI.QuenMatKhau.datasource" />
+    <None Include="Properties\DataSources\SieuThiMini.GUI.UCNhaCungCap.datasource" />
+    <None Include="Properties\DataSources\SieuThiMini.GUI.UCNhapHang.datasource" />
+    <None Include="Properties\DataSources\SieuThiMini.GUI.UCTaiKhoan.datasource" />
+    <None Include="Properties\DataSources\SieuThiMini.GUI.UserCThongKe.datasource" />
+    <None Include="Properties\DataSources\SieuThiMini.Properties.Resources.datasource" />
+    <None Include="Properties\DataSources\SieuThiMini.Properties.Settings.datasource" />
+    <None Include="Properties\DataSources\SieuThiMini.QuanLySieuThiMiniDataSet1TableAdapters.NhanVienTableAdapter.datasource" />
+    <None Include="Properties\DataSources\SieuThiMini.QuanLySieuThiMiniDataSet1TableAdapters.TableAdapterManager+UpdateOrderOption.datasource" />
+    <None Include="Properties\DataSources\SieuThiMini.QuanLySieuThiMiniDataSet1TableAdapters.TableAdapterManager.datasource" />
+    <None Include="Properties\DataSources\SieuThiMini.QuanLySieuThiMiniDataSetTableAdapters.HoaDonTableAdapter.datasource" />
+    <None Include="Properties\DataSources\SieuThiMini.QuanLySieuThiMiniDataSetTableAdapters.TableAdapterManager+UpdateOrderOption.datasource" />
+    <None Include="Properties\DataSources\SieuThiMini.QuanLySieuThiMiniDataSetTableAdapters.TableAdapterManager.datasource" />
+    <None Include="Properties\DataSources\SqlServerTypes.Utilities.datasource" />
+    <None Include="Properties\DataSources\UCCTKM.datasource" />
+    <None Include="Properties\DataSources\UCNhanVien.datasource" />
+    <None Include="Properties\DataSources\UCSP.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -374,16 +596,6 @@
     <None Include="QuanLySieuThiMiniDataSet1.xss">
       <DependentUpon>QuanLySieuThiMiniDataSet1.xsd</DependentUpon>
     </None>
-    <None Include="Resources\backgroundmain.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\logo1.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\logoMain.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\logoLogin.gif" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="GUI\Database1.mdf">
@@ -393,7 +605,75 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
-    <None Include="Resources\anh1.jpg" />
+    <None Include="QuanLySieuThiMiniDataSet21.xsc">
+      <DependentUpon>QuanLySieuThiMiniDataSet21.xsd</DependentUpon>
+    </None>
+    <None Include="QuanLySieuThiMiniDataSet21.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanLySieuThiMiniDataSet21.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QuanLySieuThiMiniDataSet21.xss">
+      <DependentUpon>QuanLySieuThiMiniDataSet21.xsd</DependentUpon>
+    </None>
+    <None Include="QuanLySieuThiMiniDataSet3.xsc">
+      <DependentUpon>QuanLySieuThiMiniDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="QuanLySieuThiMiniDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanLySieuThiMiniDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QuanLySieuThiMiniDataSet3.xss">
+      <DependentUpon>QuanLySieuThiMiniDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="QuanLySieuThiMiniDataSet55.xsc">
+      <DependentUpon>QuanLySieuThiMiniDataSet55.xsd</DependentUpon>
+    </None>
+    <None Include="QuanLySieuThiMiniDataSet55.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanLySieuThiMiniDataSet55.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QuanLySieuThiMiniDataSet55.xss">
+      <DependentUpon>QuanLySieuThiMiniDataSet55.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\backgroundmain.bmp" />
+    <None Include="Resources\backgroundmain.png" />
+    <None Include="Resources\logo11.jpg" />
+    <None Include="Resources\logo1.jpg" />
+    <None Include="Resources\logoLogin.gif" />
+    <None Include="Resources\logoMain.gif" />
+    <None Include="Resources\doraeku.png" />
+    <None Include="Resources\add.png" />
+    <None Include="Resources\add1.png" />
+    <None Include="Resources\add2.png" />
+    <None Include="Resources\service.png" />
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\exit.png" />
+    <None Include="Resources\printer.png" />
+    <None Include="Resources\importExcel.png" />
+    <None Include="Resources\exportExcel.png" />
+    <None Include="Resources\confirm.png" />
+    <None Include="Resources\selected.png" />
+    <None Include="Resources\add11.png" />
+    <None Include="Resources\update1.png" />
+    <None Include="Resources\delete1.png" />
+    <None Include="Resources\refresh.png" />
+    <None Include="Resources\products.png" />
+    <None Include="Resources\products1.png" />
+    <None Include="Resources\sales.png" />
+    <None Include="Resources\importGoods.png" />
+    <None Include="Resources\employee.png" />
+    <None Include="Resources\promotion.png" />
+    <None Include="Resources\analytics.png" />
+    <None Include="Resources\accounting.png" />
+    <None Include="Resources\turn-around.png" />
+    <None Include="Resources\cream.png" />
+    <None Include="Resources\cream1.png" />
+    <None Include="Resources\fast-food.png" />
+    <None Include="Resources\dried-fruits.png" />
+    <None Include="Resources\collagen.png" />
     <Content Include="SqlServerTypes\readme.htm" />
   </ItemGroup>
   <ItemGroup>
@@ -408,9 +688,26 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>if exist "$(TargetPath).locked" del "$(TargetPath).locked"
 if exist "$(TargetPath)" if not exist "$(TargetPath).locked" move "$(TargetPath)" "$(TargetPath).locked"</PreBuildEvent>
   </PropertyGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Build.Tasks.Git.1.1.1\build\Microsoft.Build.Tasks.Git.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Build.Tasks.Git.1.1.1\build\Microsoft.Build.Tasks.Git.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Build.Tasks.Git.1.1.1\build\Microsoft.Build.Tasks.Git.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Build.Tasks.Git.1.1.1\build\Microsoft.Build.Tasks.Git.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.SourceLink.Common.1.1.1\build\Microsoft.SourceLink.Common.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.SourceLink.Common.1.1.1\build\Microsoft.SourceLink.Common.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.SourceLink.Common.1.1.1\build\Microsoft.SourceLink.Common.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.SourceLink.Common.1.1.1\build\Microsoft.SourceLink.Common.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.SourceLink.GitHub.1.1.1\build\Microsoft.SourceLink.GitHub.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.SourceLink.GitHub.1.1.1\build\Microsoft.SourceLink.GitHub.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.SourceLink.GitHub.1.1.1\build\Microsoft.SourceLink.GitHub.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.SourceLink.GitHub.1.1.1\build\Microsoft.SourceLink.GitHub.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.Build.Tasks.Git.1.1.1\build\Microsoft.Build.Tasks.Git.targets" Condition="Exists('..\packages\Microsoft.Build.Tasks.Git.1.1.1\build\Microsoft.Build.Tasks.Git.targets')" />
+  <Import Project="..\packages\Microsoft.SourceLink.Common.1.1.1\build\Microsoft.SourceLink.Common.targets" Condition="Exists('..\packages\Microsoft.SourceLink.Common.1.1.1\build\Microsoft.SourceLink.Common.targets')" />
+  <Import Project="..\packages\Microsoft.SourceLink.GitHub.1.1.1\build\Microsoft.SourceLink.GitHub.targets" Condition="Exists('..\packages\Microsoft.SourceLink.GitHub.1.1.1\build\Microsoft.SourceLink.GitHub.targets')" />
 </Project>

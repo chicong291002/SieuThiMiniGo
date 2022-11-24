@@ -13,7 +13,7 @@ namespace SieuThiMini.BUS
     {
         public static DataTable docDSHoaDon()
         {
-            return HoaDonDAO.layToanBoHoaDon();
+            return HoaDonDAO.docHD();
         }
 
         public static void themHD(HoaDonDTO hd)
@@ -28,9 +28,14 @@ namespace SieuThiMini.BUS
         {
             HoaDonDAO.xoaHD(maHD);
         }
-        public static DataTable timHD(string tuKhoa)
+
+        public static void xoaKH(string maKH)
         {
-            return HoaDonDAO.timHD(tuKhoa);
-        } 
+            HoaDonDAO.xoaKH(maKH);
+        }
+
+        public static DataTable timHD(string tuKhoa) { 
+            return HoaDonDAO.timHD(tuKhoa); 
+        }
     }
 }

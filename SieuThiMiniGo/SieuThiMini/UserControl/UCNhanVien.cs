@@ -1,4 +1,5 @@
-﻿using OfficeOpenXml;
+﻿using DryIoc.ImTools;
+using OfficeOpenXml;
 using SieuThiMini.BUS;
 using SieuThiMini.DTO;
 using System;
@@ -8,7 +9,9 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Excel = Microsoft.Office.Interop.Excel;
@@ -22,51 +25,317 @@ namespace SieuThiMini
         {
             InitializeComponent();
             dgvNhanVien.DataSource = NhanVienBUS.GetAllNhanVien();
+            dgvNhanVien.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         [Obsolete]
         private void btnThem_Click(object sender, EventArgs e)
         {
-            string maNV = txtMaNV.Text;
-            string hoNV = txtHoNV.Text;
-            string tenNV = txtTenNV.Text;
-            string sdt = txtSDT.Text;
-            string cmnd = txtCMND.Text;
-            string email = txtEmail.Text;
+            string maNV = txtMaNV.Text.Trim();
+            string hoNV = txtHoNV.Text.Trim();
+            string tenNV = txtTenNV.Text.Trim();
+            string sdt = txtSDT.Text.Trim();
+            string cmnd = txtCMND.Text.Trim();
+            string email = txtEmail.Text.Trim();
             DateTime ngaySinh = dtNgaySinh.Value;
-            string gioiTinh = cbGioiTinh.Text;
-            float luong = float.Parse(txtLuong.Text);
-            string viTri = cbViTri.Text;
+            string gioiTinh = cbGioiTinh.Text.Trim();
+            string luong = txtLuong.Text.Trim();
+            string viTri = cbViTri.Text.Trim();
             DateTime ngayVaoLam = dtNgayVaoLam.Value;
-            NhanVien nv = new NhanVien(maNV, hoNV, tenNV, sdt, cmnd, email, ngaySinh, gioiTinh, luong, viTri, ngayVaoLam);
-            NhanVienBUS.insertNhanVien(nv);
-            dgvNhanVien.DataSource = NhanVienBUS.GetAllNhanVien();
+
+            if (maNV.Equals("") || hoNV.Equals("") || tenNV.Equals("") || sdt.Equals("") || cmnd.Equals("") || email.Equals("")
+                || gioiTinh.Equals("") || luong.Equals("") || viTri.Equals("")){
+                MessageBox.Show("Chưa có chọn đầy đủ thông tin");
+            }
+            else
+            {
+                bool check = false;
+                int i;
+
+                //check gender
+                String sex = "^[a-zA-Z]+(([\\'\\ \\][(^10$|^[0-9]{1,2}]))+(([\\'\\ \\][(?:m|M|f|F|)$]))*$";
+                Regex regexSex = new Regex(sex);
+                var resSex = regexSex.IsMatch(gioiTinh);
+
+                //check fullName
+                String USERNAME_PATTERN = "^[a-zA-Z_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶ" +
+                "ẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợ" +
+                "ụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\\s]+$";
+                Regex regex = new Regex(USERNAME_PATTERN);
+                var res = regex.IsMatch(tenNV);
+
+                //check email
+                string checkEmail = @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$";
+                Regex regexEmail = new Regex(checkEmail);
+                var res1111 = regexEmail.IsMatch(email);
+
+                //check sdt
+                string checkSDT = @"^\(?([0-9]{3})\)?[-.●]?([0-9]{3})[-.●]?([0-9]{4})$";
+                Regex regexSDT = new Regex(checkSDT);
+                var resSDT = regexSDT.IsMatch(sdt);
+
+                //check CMND
+                string checkCMND = @"[0-9]{9}";
+                Regex regexCMND = new Regex(checkCMND);
+                var resCMND = regexCMND.IsMatch(cmnd);
+
+                //check fullName
+                String xx = "^[a-zA-Z_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶ" +
+                "ẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợ" +
+                "ụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\\s]+$";
+                Regex regex11 = new Regex(xx);
+                var resname = regex11.IsMatch(tenNV);
+
+                //check Ho
+                String ho = "^[a-zA-Z_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶ" +
+                "ẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợ" +
+                "ụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\\s]+$";
+                Regex regexHo = new Regex(ho);
+                var resHo = regexHo.IsMatch(hoNV);
+
+                string checkNumber = "^[0-9 -]+$";
+                Regex regexNumber = new Regex(checkNumber);
+                var resNumber = regexNumber.IsMatch(luong + "");
+
+
+                if (resname == false)
+                {
+                    MessageBox.Show("Tên của bạn chưa có đúng á");
+                }
+                else
+                {
+                    if (res1111 == false)
+                    {
+                        MessageBox.Show("email chưa chính xác");
+                    }
+                    else
+                    {
+                        if (resHo == false)
+                        {
+                            MessageBox.Show("Họ của bạn không chính xác");
+                        }
+                        else
+                        {
+                            if (resNumber == false)
+                            {
+                                MessageBox.Show("Nhập lương sai cú pháp");
+                            }
+                            else
+                            {
+                                if (resSDT == false)
+                                {
+                                    MessageBox.Show("SDT chưa chính xác");
+                                }
+                                else
+                                {
+                                    if (resCMND == false)
+                                    {
+                                        MessageBox.Show("Chứng Minh nhân dân chưa đúng");
+                                    }
+                                    else
+                                    {
+
+                                        if (ngayVaoLam < ngaySinh)
+                                        {
+                                            MessageBox.Show("Ngày Vào Làm phải lớn hơn ngày sinh nha fen !!");
+                                        }
+                                        else
+                                        {
+
+                                            int index = dgvNhanVien.CurrentCell.RowIndex;
+                                            if (index >= 0)
+                                            {
+                                                for (i = 0; i < dgvNhanVien.Rows.Count; i++)
+                                                {
+                                                    string kq = dgvNhanVien.Rows[i].Cells[0].Value.ToString().Trim();
+                                                    if (maNV.Equals(kq))
+                                                    {
+                                                        check = true;
+                                                        break;
+                                                    }
+                                                }
+                                            }
+
+                                            if (check == false)
+                                            {
+                                                MessageBox.Show("Thêm Nhân Viên Thành Công");
+                                                NhanVien nv = new NhanVien(maNV, hoNV, tenNV, sdt, cmnd, email, ngaySinh, gioiTinh, luong, viTri, ngayVaoLam);
+                                                NhanVienBUS.insertNhanVien(nv);
+                                                dgvNhanVien.DataSource = NhanVienBUS.GetAllNhanVien();
+                                            }
+                                            else
+                                            {
+
+                                                MessageBox.Show("mã bị trùng");
+                                                txtMaNV.Text = "";
+                                                txtHoNV.Text = "";
+                                                txtTenNV.Text = "";
+                                                txtSDT.Text = "";
+                                                txtCMND.Text = "";
+                                                cbGioiTinh.Text = "";
+                                                txtLuong.Text = "";
+                                                cbViTri.Text = "";
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         [Obsolete]
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            string maNV = txtMaNV.Text;
-            string hoNV = txtHoNV.Text;
-            string tenNV = txtTenNV.Text;
-            string sdt = txtSDT.Text;
-            string cmnd = txtCMND.Text;
-            string email = txtEmail.Text;
-            DateTime ngaySinh = dtNgaySinh.Value;
-            string gioiTinh = cbGioiTinh.Text;
-            float luong = float.Parse(txtLuong.Text);
-            string viTri = cbViTri.Text;
-            DateTime ngayVaoLam = dtNgayVaoLam.Value;
-            NhanVien nv = new NhanVien(maNV, hoNV, tenNV, sdt, cmnd, email, ngaySinh, gioiTinh, luong, viTri, ngayVaoLam);
-            NhanVienBUS.updateNhanVien(nv);
-            dgvNhanVien.DataSource = NhanVienBUS.GetAllNhanVien();
+            MessageBox.Show("Xoá Nhân Viên Thành Công");
+            string maNV = txtMaNV.Text.Trim();
+            bool check = false;
+            foreach (TaiKhoan tk in TaiKhoanBUS.getAllTaiKhoan())
+            {
+                string kq = tk.MaNV.Trim();
+                if (maNV.Equals(kq))
+                {
+                    check = true;
+                    TaiKhoanBUS.deleteTaiKhoanNV(maNV);
+                    NhanVienBUS.deleteNhanVien(maNV);
+                }
+            }
+            if (check == false)
+            {
+                dgvNhanVien.DataSource = NhanVienBUS.GetAllNhanVien();
+            }
+            else
+            {
+                NhanVienBUS.deleteNhanVien(maNV);
+                dgvNhanVien.DataSource = NhanVienBUS.GetAllNhanVien();
+            }
         }
 
+        [Obsolete]
         private void btnSua_Click(object sender, EventArgs e)
         {
-            string maNV = txtMaNV.Text;
-            NhanVienBUS.deleteNhanVien(maNV);
-            dgvNhanVien.DataSource = NhanVienBUS.GetAllNhanVien();
+            string maNV = txtMaNV.Text.Trim();
+            string hoNV = txtHoNV.Text.Trim();
+            string tenNV = txtTenNV.Text.Trim();
+            string sdt = txtSDT.Text.Trim();
+            string cmnd = txtCMND.Text.Trim();
+            string email = txtEmail.Text.Trim();
+            DateTime ngaySinh = dtNgaySinh.Value;
+            string gioiTinh = cbGioiTinh.Text;
+            string luong = txtLuong.Text.Trim();
+            string viTri = cbViTri.Text.Trim();
+            DateTime ngayVaoLam = dtNgayVaoLam.Value;
+
+            //check gender
+            String sex = "^[a-zA-Z]+(([\\'\\ \\][(^10$|^[0-9]{1,2}]))+(([\\'\\ \\][(?:m|M|f|F|)$]))*$";
+            Regex regexSex = new Regex(sex);
+            var resSex = regexSex.IsMatch(gioiTinh);
+
+            //check fullName
+            String USERNAME_PATTERN = "^[a-zA-Z_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶ" +
+            "ẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợ" +
+            "ụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\\s]+$";
+            Regex regex = new Regex(USERNAME_PATTERN);
+            var res = regex.IsMatch(tenNV);
+
+            //check email
+            string checkEmail = @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$";
+            Regex regexEmail = new Regex(checkEmail);
+            var res1111 = regexEmail.IsMatch(email);
+
+            //check sdt
+            string checkSDT = @"^\(?([0-9]{3})\)?[-.●]?([0-9]{3})[-.●]?([0-9]{4})$";
+            Regex regexSDT = new Regex(checkSDT);
+            var resSDT = regexSDT.IsMatch(sdt);
+
+            //check CMND
+            string checkCMND = @"[0-9]{9}";
+            Regex regexCMND = new Regex(checkCMND);
+            var resCMND = regexCMND.IsMatch(cmnd);
+
+            //check fullName
+            String xx = "^[a-zA-Z_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶ" +
+            "ẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợ" +
+            "ụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\\s]+$";
+            Regex regex11 = new Regex(xx);
+            var resname = regex11.IsMatch(tenNV);
+
+            //check Ho
+            String ho = "^[a-zA-Z_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶ" +
+            "ẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợ" +
+            "ụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\\s]+$";
+            Regex regexHo = new Regex(ho);
+            var resHo = regexHo.IsMatch(hoNV);
+
+            string checkNumber = "^[0-9 -]+$";
+            Regex regexNumber = new Regex(checkNumber);
+            var resNumber = regexNumber.IsMatch(luong + "");
+
+
+            if (resname == false)
+            {
+                MessageBox.Show("Tên của bạn chưa có đúng á");
+            }
+            else
+            {
+                if (res1111 == false)
+                {
+                    MessageBox.Show("email chưa chính xác");
+                }
+                else
+                {
+                    if (resHo == false)
+                    {
+                        MessageBox.Show("Họ của bạn không chính xác");
+                    }
+                    else
+                    {
+                        if (resNumber == false)
+                        {
+                            MessageBox.Show("Nhập lương sai cú pháp");
+                        }
+                        else
+                        {
+                            if (resSDT == false)
+                            {
+                                MessageBox.Show("SDT chưa chính xác");
+                            }
+                            else
+                            {
+                                if (resCMND == false)
+                                {
+                                    MessageBox.Show("Chứng Minh nhân dân chưa đúng");
+                                }
+                                else
+                                {
+                                    if (ngayVaoLam < ngaySinh)
+                                    {
+                                        MessageBox.Show("Ngày Vào Làm phải lớn hơn ngày sinh nha fen !!");
+                                    }
+                                    else
+                                    {
+                                        int index = dgvNhanVien.CurrentCell.RowIndex;
+                                        if (index < 0)
+                                        {
+                                            MessageBox.Show("Chưa chọn sao sửa anh trai!");
+                                        }
+                                        else
+                                        {
+                                            MessageBox.Show("Sửa Nhân Viên Thành Công");
+                                            NhanVien nv = new NhanVien(maNV, hoNV, tenNV, sdt, cmnd, email, ngaySinh, gioiTinh, luong, viTri, ngayVaoLam);
+                                            NhanVienBUS.updateNhanVien(nv);
+
+                                            dgvNhanVien.DataSource = NhanVienBUS.GetAllNhanVien();
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
@@ -83,14 +352,16 @@ namespace SieuThiMini
                 txtMaNV.Text = data.Cells[0].Value.ToString();
                 txtHoNV.Text = data.Cells[1].Value.ToString();
                 txtTenNV.Text = data.Cells[2].Value.ToString();
-                txtSDT.Text = data.Cells[3].Value.ToString();
-                txtCMND.Text = data.Cells[4].Value.ToString();
+
+                txtSDT.Text = data.Cells[4].Value.ToString();
+                txtCMND.Text = data.Cells[3].Value.ToString();
+
                 txtEmail.Text = data.Cells[5].Value.ToString();
                 dtNgaySinh.Value = (DateTime)data.Cells[6].Value;
                 cbGioiTinh.Text = data.Cells[7].Value.ToString();
                 txtLuong.Text = data.Cells[8].Value.ToString();
                 cbViTri.Text = data.Cells[9].Value.ToString();
-                dtNgayVaoLam.Value = (DateTime)data.Cells[10].Value;                
+                dtNgayVaoLam.Value = (DateTime)data.Cells[10].Value;
             }
             catch (Exception)
             {
@@ -101,7 +372,7 @@ namespace SieuThiMini
         [Obsolete]
         private void ImportExcel(string path)
         {
-           
+
             using (ExcelPackage excelPackage = new ExcelPackage(new FileInfo(path)))
             {
                 ExcelWorksheet excelWorksheet = excelPackage.Workbook.Worksheets[0];
@@ -153,7 +424,7 @@ namespace SieuThiMini
             }
         }
 
-        [Obsolete]      
+        [Obsolete]
         private void btnNhapExcel_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -220,6 +491,37 @@ namespace SieuThiMini
         {
             FormNhanVien formNhanVien = new FormNhanVien();
             formNhanVien.ShowDialog();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnXoa_Click_1(object sender, EventArgs e)
+        {
+            MessageBox.Show("Xoá Nhân Viên Thành Công");
+            string maNV = txtMaNV.Text.Trim();
+            bool check = false;
+            foreach (TaiKhoan tk in TaiKhoanBUS.getAllTaiKhoan())
+            {
+                string kq = tk.MaNV.Trim();
+                if (maNV.Equals(kq))
+                {
+                    check = true;
+                    TaiKhoanBUS.deleteTaiKhoanNV(maNV);
+                    NhanVienBUS.deleteNhanVien(maNV);
+                }
+            }
+            if (check == true)
+            {
+                dgvNhanVien.DataSource = NhanVienBUS.GetAllNhanVien();
+            }
+            else
+            {
+                NhanVienBUS.deleteNhanVien(maNV);
+                dgvNhanVien.DataSource = NhanVienBUS.GetAllNhanVien();
+            }
         }
     }
 }

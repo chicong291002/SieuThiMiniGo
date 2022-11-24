@@ -28,8 +28,7 @@ namespace SieuThiMini.DAO
                 {
                     if (dataReader.IsDBNull(0).ToString() == null)
                     {
-                        kq = dataReader.GetInt32(0);
-                        return kq;
+                        return 0;
                     }
                     else if (dataReader.IsDBNull(0) + "" != null)
                     {
@@ -82,7 +81,7 @@ namespace SieuThiMini.DAO
             SqlCommand sqlCommand;
             Conn = Connection.GetSqlConnection();
             Conn.Open();
-            string query = "Select TongTien From HoaDon WHERE Year(NgayLap) ='" + nam + "' and Month(NgayLap) ='" + thang +  "'";
+            string query = "Select TongTien From HoaDon WHERE Year(NgayLap) ='" + nam + "' and Month(NgayLap) ='" + thang + "'";
             sqlCommand = new SqlCommand(query, Conn);
             dataReader = sqlCommand.ExecuteReader();
             if (dataReader != null)

@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.label1 = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -79,14 +79,16 @@
             this.textBox22 = new System.Windows.Forms.TextBox();
             this.textBox23 = new System.Windows.Forms.TextBox();
             this.textBox24 = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(523, 15);
+            this.label1.Location = new System.Drawing.Point(497, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(209, 51);
             this.label1.TabIndex = 0;
@@ -102,31 +104,32 @@
             // 
             this.chart1.BackColor = System.Drawing.Color.Aqua;
             this.chart1.BorderlineColor = System.Drawing.Color.Transparent;
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            chartArea3.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chart1.Legends.Add(legend3);
             this.chart1.Location = new System.Drawing.Point(61, 478);
+            this.chart1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
-            series1.Legend = "Legend1";
-            series1.Name = "Money";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(1081, 246);
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series3.Legend = "Legend1";
+            series3.Name = "Money";
+            this.chart1.Series.Add(series3);
+            this.chart1.Size = new System.Drawing.Size(1095, 246);
             this.chart1.TabIndex = 1;
             this.chart1.Text = "chart1";
-            title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title1.Name = "Title1";
-            title1.Text = "Thống Kê Hoá Đơn";
-            this.chart1.Titles.Add(title1);
-            this.chart1.Click += new System.EventHandler(this.chart1_Click);
+            title3.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title3.Name = "Title1";
+            title3.Text = "Thống Kê Hoá Đơn";
+            this.chart1.Titles.Add(title3);
             // 
             // rbThang
             // 
             this.rbThang.AutoSize = true;
             this.rbThang.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbThang.Location = new System.Drawing.Point(373, 188);
+            this.rbThang.Location = new System.Drawing.Point(432, 189);
+            this.rbThang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rbThang.Name = "rbThang";
             this.rbThang.Size = new System.Drawing.Size(95, 29);
             this.rbThang.TabIndex = 4;
@@ -139,7 +142,8 @@
             // 
             this.rbQuy.AutoSize = true;
             this.rbQuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbQuy.Location = new System.Drawing.Point(743, 188);
+            this.rbQuy.Location = new System.Drawing.Point(675, 189);
+            this.rbQuy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rbQuy.Name = "rbQuy";
             this.rbQuy.Size = new System.Drawing.Size(73, 29);
             this.rbQuy.TabIndex = 5;
@@ -157,16 +161,18 @@
             "2020",
             "2021",
             "2022"});
-            this.cbNam.Location = new System.Drawing.Point(569, 124);
+            this.cbNam.Location = new System.Drawing.Point(550, 123);
+            this.cbNam.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbNam.Name = "cbNam";
-            this.cbNam.Size = new System.Drawing.Size(145, 24);
+            this.cbNam.Size = new System.Drawing.Size(198, 24);
             this.cbNam.TabIndex = 3;
             this.cbNam.SelectedIndexChanged += new System.EventHandler(this.cbNam_SelectedIndexChanged);
             // 
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.Color.MistyRose;
-            this.textBox1.Location = new System.Drawing.Point(84, 241);
+            this.textBox1.Location = new System.Drawing.Point(137, 263);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(80, 48);
@@ -177,7 +183,8 @@
             // textBox2
             // 
             this.textBox2.BackColor = System.Drawing.Color.MistyRose;
-            this.textBox2.Location = new System.Drawing.Point(164, 241);
+            this.textBox2.Location = new System.Drawing.Point(217, 263);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(80, 48);
@@ -188,7 +195,8 @@
             // textBox3
             // 
             this.textBox3.BackColor = System.Drawing.Color.MistyRose;
-            this.textBox3.Location = new System.Drawing.Point(321, 241);
+            this.textBox3.Location = new System.Drawing.Point(375, 263);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(80, 48);
@@ -199,7 +207,8 @@
             // textBox4
             // 
             this.textBox4.BackColor = System.Drawing.Color.MistyRose;
-            this.textBox4.Location = new System.Drawing.Point(241, 241);
+            this.textBox4.Location = new System.Drawing.Point(295, 263);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(80, 48);
@@ -210,7 +219,8 @@
             // textBox5
             // 
             this.textBox5.BackColor = System.Drawing.Color.MistyRose;
-            this.textBox5.Location = new System.Drawing.Point(634, 241);
+            this.textBox5.Location = new System.Drawing.Point(688, 263);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox5.Multiline = true;
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(80, 48);
@@ -221,7 +231,8 @@
             // textBox6
             // 
             this.textBox6.BackColor = System.Drawing.Color.MistyRose;
-            this.textBox6.Location = new System.Drawing.Point(554, 241);
+            this.textBox6.Location = new System.Drawing.Point(608, 263);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox6.Multiline = true;
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(80, 48);
@@ -232,7 +243,8 @@
             // textBox7
             // 
             this.textBox7.BackColor = System.Drawing.Color.MistyRose;
-            this.textBox7.Location = new System.Drawing.Point(477, 241);
+            this.textBox7.Location = new System.Drawing.Point(531, 263);
+            this.textBox7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox7.Multiline = true;
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(80, 48);
@@ -243,7 +255,8 @@
             // textBox8
             // 
             this.textBox8.BackColor = System.Drawing.Color.MistyRose;
-            this.textBox8.Location = new System.Drawing.Point(397, 241);
+            this.textBox8.Location = new System.Drawing.Point(451, 263);
+            this.textBox8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox8.Multiline = true;
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(80, 48);
@@ -254,7 +267,8 @@
             // textBox10
             // 
             this.textBox10.BackColor = System.Drawing.Color.MistyRose;
-            this.textBox10.Location = new System.Drawing.Point(1023, 241);
+            this.textBox10.Location = new System.Drawing.Point(1076, 263);
+            this.textBox10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox10.Multiline = true;
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(80, 48);
@@ -265,7 +279,8 @@
             // textBox11
             // 
             this.textBox11.BackColor = System.Drawing.Color.MistyRose;
-            this.textBox11.Location = new System.Drawing.Point(946, 241);
+            this.textBox11.Location = new System.Drawing.Point(1000, 263);
+            this.textBox11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox11.Multiline = true;
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(80, 48);
@@ -276,7 +291,8 @@
             // textBox12
             // 
             this.textBox12.BackColor = System.Drawing.Color.MistyRose;
-            this.textBox12.Location = new System.Drawing.Point(866, 241);
+            this.textBox12.Location = new System.Drawing.Point(920, 263);
+            this.textBox12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox12.Multiline = true;
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(80, 48);
@@ -287,7 +303,8 @@
             // textBox13
             // 
             this.textBox13.BackColor = System.Drawing.Color.MistyRose;
-            this.textBox13.Location = new System.Drawing.Point(790, 241);
+            this.textBox13.Location = new System.Drawing.Point(843, 263);
+            this.textBox13.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox13.Multiline = true;
             this.textBox13.Name = "textBox13";
             this.textBox13.Size = new System.Drawing.Size(80, 48);
@@ -298,7 +315,8 @@
             // textBox14
             // 
             this.textBox14.BackColor = System.Drawing.Color.MistyRose;
-            this.textBox14.Location = new System.Drawing.Point(710, 241);
+            this.textBox14.Location = new System.Drawing.Point(763, 263);
+            this.textBox14.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox14.Multiline = true;
             this.textBox14.Name = "textBox14";
             this.textBox14.Size = new System.Drawing.Size(80, 48);
@@ -308,7 +326,8 @@
             // 
             // txt12
             // 
-            this.txt12.Location = new System.Drawing.Point(1023, 285);
+            this.txt12.Location = new System.Drawing.Point(1076, 308);
+            this.txt12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt12.Multiline = true;
             this.txt12.Name = "txt12";
             this.txt12.Size = new System.Drawing.Size(80, 48);
@@ -317,7 +336,8 @@
             // 
             // txt11
             // 
-            this.txt11.Location = new System.Drawing.Point(946, 285);
+            this.txt11.Location = new System.Drawing.Point(1000, 308);
+            this.txt11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt11.Multiline = true;
             this.txt11.Name = "txt11";
             this.txt11.Size = new System.Drawing.Size(80, 48);
@@ -326,7 +346,8 @@
             // 
             // txt10
             // 
-            this.txt10.Location = new System.Drawing.Point(866, 285);
+            this.txt10.Location = new System.Drawing.Point(920, 308);
+            this.txt10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt10.Multiline = true;
             this.txt10.Name = "txt10";
             this.txt10.Size = new System.Drawing.Size(80, 48);
@@ -335,7 +356,8 @@
             // 
             // txt9
             // 
-            this.txt9.Location = new System.Drawing.Point(790, 285);
+            this.txt9.Location = new System.Drawing.Point(843, 308);
+            this.txt9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt9.Multiline = true;
             this.txt9.Name = "txt9";
             this.txt9.Size = new System.Drawing.Size(80, 48);
@@ -344,7 +366,8 @@
             // 
             // txt8
             // 
-            this.txt8.Location = new System.Drawing.Point(710, 285);
+            this.txt8.Location = new System.Drawing.Point(763, 308);
+            this.txt8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt8.Multiline = true;
             this.txt8.Name = "txt8";
             this.txt8.Size = new System.Drawing.Size(80, 48);
@@ -353,7 +376,8 @@
             // 
             // txt7
             // 
-            this.txt7.Location = new System.Drawing.Point(634, 285);
+            this.txt7.Location = new System.Drawing.Point(688, 308);
+            this.txt7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt7.Multiline = true;
             this.txt7.Name = "txt7";
             this.txt7.Size = new System.Drawing.Size(80, 48);
@@ -362,7 +386,8 @@
             // 
             // txt6
             // 
-            this.txt6.Location = new System.Drawing.Point(554, 285);
+            this.txt6.Location = new System.Drawing.Point(608, 308);
+            this.txt6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt6.Multiline = true;
             this.txt6.Name = "txt6";
             this.txt6.Size = new System.Drawing.Size(80, 48);
@@ -371,7 +396,8 @@
             // 
             // txt5
             // 
-            this.txt5.Location = new System.Drawing.Point(477, 285);
+            this.txt5.Location = new System.Drawing.Point(531, 308);
+            this.txt5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt5.Multiline = true;
             this.txt5.Name = "txt5";
             this.txt5.Size = new System.Drawing.Size(80, 48);
@@ -380,7 +406,8 @@
             // 
             // txt4
             // 
-            this.txt4.Location = new System.Drawing.Point(397, 285);
+            this.txt4.Location = new System.Drawing.Point(451, 308);
+            this.txt4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt4.Multiline = true;
             this.txt4.Name = "txt4";
             this.txt4.Size = new System.Drawing.Size(80, 48);
@@ -389,7 +416,8 @@
             // 
             // txt3
             // 
-            this.txt3.Location = new System.Drawing.Point(321, 285);
+            this.txt3.Location = new System.Drawing.Point(375, 308);
+            this.txt3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt3.Multiline = true;
             this.txt3.Name = "txt3";
             this.txt3.Size = new System.Drawing.Size(80, 48);
@@ -398,7 +426,8 @@
             // 
             // txt2
             // 
-            this.txt2.Location = new System.Drawing.Point(241, 285);
+            this.txt2.Location = new System.Drawing.Point(295, 308);
+            this.txt2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt2.Multiline = true;
             this.txt2.Name = "txt2";
             this.txt2.Size = new System.Drawing.Size(80, 48);
@@ -407,7 +436,8 @@
             // 
             // txt1
             // 
-            this.txt1.Location = new System.Drawing.Point(164, 285);
+            this.txt1.Location = new System.Drawing.Point(217, 308);
+            this.txt1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt1.Multiline = true;
             this.txt1.Name = "txt1";
             this.txt1.Size = new System.Drawing.Size(80, 48);
@@ -417,7 +447,8 @@
             // textBox28
             // 
             this.textBox28.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.textBox28.Location = new System.Drawing.Point(84, 285);
+            this.textBox28.Location = new System.Drawing.Point(137, 308);
+            this.textBox28.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox28.Multiline = true;
             this.textBox28.Name = "textBox28";
             this.textBox28.Size = new System.Drawing.Size(80, 48);
@@ -429,10 +460,11 @@
             // 
             this.textBox9.BackColor = System.Drawing.Color.Red;
             this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(851, 61);
+            this.textBox9.Location = new System.Drawing.Point(791, 61);
+            this.textBox9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox9.Multiline = true;
             this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(314, 66);
+            this.textBox9.Size = new System.Drawing.Size(365, 66);
             this.textBox9.TabIndex = 33;
             this.textBox9.Text = "Tổng Thu";
             this.textBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -446,10 +478,11 @@
             // txtTongThu
             // 
             this.txtTongThu.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTongThu.Location = new System.Drawing.Point(851, 124);
+            this.txtTongThu.Location = new System.Drawing.Point(791, 123);
+            this.txtTongThu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTongThu.Multiline = true;
             this.txtTongThu.Name = "txtTongThu";
-            this.txtTongThu.Size = new System.Drawing.Size(314, 66);
+            this.txtTongThu.Size = new System.Drawing.Size(365, 66);
             this.txtTongThu.TabIndex = 35;
             this.txtTongThu.Text = " 0 VNĐ";
             this.txtTongThu.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -458,7 +491,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(437, 124);
+            this.label2.Location = new System.Drawing.Point(416, 122);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(111, 25);
             this.label2.TabIndex = 36;
@@ -466,7 +499,8 @@
             // 
             // txtQuy4
             // 
-            this.txtQuy4.Location = new System.Drawing.Point(1023, 414);
+            this.txtQuy4.Location = new System.Drawing.Point(1076, 414);
+            this.txtQuy4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtQuy4.Multiline = true;
             this.txtQuy4.Name = "txtQuy4";
             this.txtQuy4.Size = new System.Drawing.Size(80, 48);
@@ -475,7 +509,8 @@
             // 
             // txtQuy3
             // 
-            this.txtQuy3.Location = new System.Drawing.Point(947, 414);
+            this.txtQuy3.Location = new System.Drawing.Point(1000, 414);
+            this.txtQuy3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtQuy3.Multiline = true;
             this.txtQuy3.Name = "txtQuy3";
             this.txtQuy3.Size = new System.Drawing.Size(80, 48);
@@ -484,7 +519,8 @@
             // 
             // txtQuy2
             // 
-            this.txtQuy2.Location = new System.Drawing.Point(867, 414);
+            this.txtQuy2.Location = new System.Drawing.Point(920, 414);
+            this.txtQuy2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtQuy2.Multiline = true;
             this.txtQuy2.Name = "txtQuy2";
             this.txtQuy2.Size = new System.Drawing.Size(80, 48);
@@ -493,7 +529,8 @@
             // 
             // txtQuy1
             // 
-            this.txtQuy1.Location = new System.Drawing.Point(790, 414);
+            this.txtQuy1.Location = new System.Drawing.Point(842, 414);
+            this.txtQuy1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtQuy1.Multiline = true;
             this.txtQuy1.Name = "txtQuy1";
             this.txtQuy1.Size = new System.Drawing.Size(80, 48);
@@ -503,7 +540,8 @@
             // textBox19
             // 
             this.textBox19.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.textBox19.Location = new System.Drawing.Point(710, 414);
+            this.textBox19.Location = new System.Drawing.Point(762, 414);
+            this.textBox19.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox19.Multiline = true;
             this.textBox19.Name = "textBox19";
             this.textBox19.Size = new System.Drawing.Size(80, 48);
@@ -514,7 +552,8 @@
             // textBox20
             // 
             this.textBox20.BackColor = System.Drawing.Color.MistyRose;
-            this.textBox20.Location = new System.Drawing.Point(1023, 370);
+            this.textBox20.Location = new System.Drawing.Point(1076, 370);
+            this.textBox20.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox20.Multiline = true;
             this.textBox20.Name = "textBox20";
             this.textBox20.Size = new System.Drawing.Size(80, 48);
@@ -525,7 +564,8 @@
             // textBox21
             // 
             this.textBox21.BackColor = System.Drawing.Color.MistyRose;
-            this.textBox21.Location = new System.Drawing.Point(947, 370);
+            this.textBox21.Location = new System.Drawing.Point(1000, 370);
+            this.textBox21.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox21.Multiline = true;
             this.textBox21.Name = "textBox21";
             this.textBox21.Size = new System.Drawing.Size(80, 48);
@@ -536,7 +576,8 @@
             // textBox22
             // 
             this.textBox22.BackColor = System.Drawing.Color.MistyRose;
-            this.textBox22.Location = new System.Drawing.Point(867, 370);
+            this.textBox22.Location = new System.Drawing.Point(920, 370);
+            this.textBox22.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox22.Multiline = true;
             this.textBox22.Name = "textBox22";
             this.textBox22.Size = new System.Drawing.Size(80, 48);
@@ -547,7 +588,8 @@
             // textBox23
             // 
             this.textBox23.BackColor = System.Drawing.Color.MistyRose;
-            this.textBox23.Location = new System.Drawing.Point(790, 370);
+            this.textBox23.Location = new System.Drawing.Point(842, 370);
+            this.textBox23.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox23.Multiline = true;
             this.textBox23.Name = "textBox23";
             this.textBox23.Size = new System.Drawing.Size(80, 48);
@@ -558,7 +600,8 @@
             // textBox24
             // 
             this.textBox24.BackColor = System.Drawing.Color.MistyRose;
-            this.textBox24.Location = new System.Drawing.Point(710, 370);
+            this.textBox24.Location = new System.Drawing.Point(762, 370);
+            this.textBox24.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox24.Multiline = true;
             this.textBox24.Name = "textBox24";
             this.textBox24.Size = new System.Drawing.Size(80, 48);
@@ -566,11 +609,21 @@
             this.textBox24.Text = "Quý";
             this.textBox24.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SieuThiMini.Properties.Resources.doraeku;
+            this.pictureBox1.Location = new System.Drawing.Point(37, 14);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(214, 235);
+            this.pictureBox1.TabIndex = 47;
+            this.pictureBox1.TabStop = false;
+            // 
             // UserCThongKe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtQuy4);
             this.Controls.Add(this.txtQuy3);
             this.Controls.Add(this.txtQuy2);
@@ -616,10 +669,11 @@
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UserCThongKe";
-            this.Size = new System.Drawing.Size(1223, 801);
-            this.Load += new System.EventHandler(this.UserCThongKe_Load);
+            this.Size = new System.Drawing.Size(1195, 801);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -673,5 +727,6 @@
         private System.Windows.Forms.TextBox textBox22;
         private System.Windows.Forms.TextBox textBox23;
         private System.Windows.Forms.TextBox textBox24;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

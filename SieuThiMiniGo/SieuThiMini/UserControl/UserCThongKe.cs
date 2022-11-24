@@ -17,25 +17,14 @@ namespace SieuThiMini.GUI
 {
     public partial class UserCThongKe : UserControl
     {
-        private string[] quy_Thu;
-        private string[] thang_Thu;
         public static int tongquy;
         //private string[] thang_Chi;
-       // rbThang_CheckedChanged(sender, e);
+        // rbThang_CheckedChanged(sender, e);
+   
 
         public UserCThongKe()
         {
             InitializeComponent();
-        }
-
-        private void UserCThongKe_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void chart1_Click(object sender, EventArgs e)
-        {
-
         }
 
         public static void doctkquy(int nam,int thangtruoc, int thangsau)
@@ -104,11 +93,7 @@ namespace SieuThiMini.GUI
 
         private void rbThang_CheckedChanged(object sender, EventArgs e)
         {
-           
-
-            loadThang(int.Parse(cbNam.SelectedItem + ""));
-
-            
+            loadThang(int.Parse(cbNam.SelectedItem + ""));  
             chart1.Series["Money"].Points.Clear();
             chart1.Series["Money"].Points.AddXY("1", txt1.Text);
             chart1.Series["Money"].Points.AddXY("2", txt2.Text);
@@ -140,7 +125,8 @@ namespace SieuThiMini.GUI
         {
             int kq = ThongKeBUS.thongKeTheoNam(cbNam.SelectedItem + "");
             txtTongThu.Text = kq.ToString();
+            rbThang_CheckedChanged(sender, e);
+            rbQuy_CheckedChanged(sender, e);
         }
-
     }
 }

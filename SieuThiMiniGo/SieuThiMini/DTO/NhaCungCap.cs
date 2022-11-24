@@ -10,6 +10,11 @@ namespace SieuThiMini.DTO
     {
         private string maNCC, tenNCC, sdt, diaChi, email;
 
+        public NhaCungCap()
+        {
+
+        }
+
         public NhaCungCap(string maNCC, string tenNCC, string sdt, string diaChi, string email)
         {
             this.MaNCC = maNCC;

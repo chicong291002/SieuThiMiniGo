@@ -10,6 +10,10 @@ namespace SieuThiMini.DTO
     {
         private string maTK, tenTK, matKhau, maNV, phanQuyen, trangThai,email;
 
+        public TaiKhoan()
+        {
+        }
+
         public TaiKhoan(string email)
         {
             this.email = email;
@@ -21,7 +25,7 @@ namespace SieuThiMini.DTO
             this.matKhau = matKhau;
         }
 
-        public TaiKhoan(string maTK, string tenTK, string matKhau, string maNV, string phanQuyen, string trangThai, string email)
+        public TaiKhoan(string maTK, string tenTK, string matKhau, string email, string maNV, string phanQuyen, string trangThai)
         {
             this.maTK = maTK;
             this.tenTK = tenTK;

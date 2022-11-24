@@ -72,7 +72,6 @@ C:\Users\congk\Downloads\SieuThiMiniGo\SieuThiMiniGo\SieuThiMini\obj\x86\Debug\S
 C:\Users\congk\Downloads\SieuThiMiniGo\SieuThiMiniGo\SieuThiMini\obj\x86\Debug\SieuThiMini.QuanLy.resources
 C:\Users\congk\Downloads\SieuThiMiniGo\SieuThiMiniGo\SieuThiMini\obj\x86\Debug\SieuThiMini.UCCTKM.resources
 C:\Users\congk\Downloads\SieuThiMiniGo\SieuThiMiniGo\SieuThiMini\obj\x86\Debug\SieuThiMini.GUI.UCNhapHang.resources
-C:\Users\congk\Downloads\SieuThiMiniGo\SieuThiMiniGo\SieuThiMini\obj\x86\Debug\SieuThiMini.GUI.UCNhaCungCap.resources
 C:\Users\congk\Downloads\SieuThiMiniGo\SieuThiMiniGo\SieuThiMini\obj\x86\Debug\SieuThiMini.UCNhanVien.resources
 C:\Users\congk\Downloads\SieuThiMiniGo\SieuThiMiniGo\SieuThiMini\obj\x86\Debug\SieuThiMini.UCSP.resources
 C:\Users\congk\Downloads\SieuThiMiniGo\SieuThiMiniGo\SieuThiMini\obj\x86\Debug\SieuThiMini.GUI.UCTaiKhoan.resources
@@ -85,3 +84,6 @@ C:\Users\congk\Downloads\SieuThiMiniGo\SieuThiMiniGo\SieuThiMini\obj\x86\Debug\S
 C:\Users\congk\Downloads\SieuThiMiniGo\SieuThiMiniGo\SieuThiMini\obj\x86\Debug\SieuThiMini.GUI.QuenMatKhau.resources
 C:\Users\congk\Downloads\SieuThiMiniGo\SieuThiMiniGo\SieuThiMini\obj\x86\Debug\SieuThiMini.GUI.FormDLG_PhieuNhap.resources
 C:\Users\congk\Downloads\SieuThiMiniGo\SieuThiMiniGo\SieuThiMini\obj\x86\Debug\SieuThiMini.FormNhanVien.resources
+C:\Users\congk\Downloads\SieuThiMiniGo\SieuThiMiniGo\SieuThiMini\obj\x86\Debug\SieuThiMini.GUI.ChonKhuyenMai.resources
+C:\Users\congk\Downloads\SieuThiMiniGo\SieuThiMiniGo\SieuThiMini\obj\x86\Debug\SieuThiMini.ChonNhanVien.resources
+C:\Users\congk\Downloads\SieuThiMiniGo\SieuThiMiniGo\SieuThiMini\obj\x86\Debug\SieuThiMini.GUI.reportHD.resources

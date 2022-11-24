@@ -11,9 +11,9 @@ namespace SieuThiMini.BUS
 {
     internal class NhanVienBUS
     {
-        public static DataTable GetAllNhanVien()
+        public static List<NhanVien> GetAllNhanVien()
         {
-            return NhanVienDAO.laytoanboNhanVien();
+            return NhanVienDAO.getAllNhanVien();
         }
         
         [Obsolete]

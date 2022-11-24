@@ -13,7 +13,7 @@ namespace SieuThiMini.BUS
     {
         public static DataTable getAllSanPham()
         {
-            return SanPhamDAO.laytoanboSanPham();
+           return SanPhamDAO.laytoanboSanPham();
         }
 
         [Obsolete]
@@ -33,9 +33,9 @@ namespace SieuThiMini.BUS
             SanPhamDAO.delete_sp(ma);
         }
 
-        public static void searchSanPham(string tuKhoa)
+        public static DataTable searchSanPham(string tuKhoa)
         {
-            SanPhamDAO.search_sp(tuKhoa);
+            return SanPhamDAO.search_sp(tuKhoa);
         }
 
         public static DataTable locSPTheoloai(string maLoai)

@@ -14,6 +14,7 @@ namespace SieuThiMini.DTO
         
         public CTPhieuNhapHang()
         {
+
         }
 
         public CTPhieuNhapHang(int maPhieu, string maSP, int soLuong, float donGia, float thanhTien)

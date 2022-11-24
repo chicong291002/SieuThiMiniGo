@@ -19,7 +19,7 @@ namespace SieuThiMini.DAO
             SqlConnection Conn = Connection.GetSqlConnection();
             Conn.Open();
             List<PhieuNhapHang> dspn = new List<PhieuNhapHang>();
-            string query = "select * from PhieuNhapHang";
+            string query = "select * from PhieuNhapHang ORDER BY MaPhieu ASC";
             SqlCommand command = new SqlCommand(query, Conn);
             SqlDataAdapter dataAdapter = new SqlDataAdapter();
             dataAdapter.SelectCommand = command;

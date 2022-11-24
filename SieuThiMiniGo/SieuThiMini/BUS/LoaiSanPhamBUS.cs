@@ -11,9 +11,9 @@ namespace SieuThiMini.BUS
 {
     internal class LoaiSanPhamBUS
     {
-        public static DataTable getAllSanPham()
+        public static List<loaiSanPham> getAllSanPham()
         {
-            return LoaiSanPhamDAO.laytoanboSanPham();
+            return LoaiSanPhamDAO.GetAllLoaiSanPhams();
         }
 
         [Obsolete]

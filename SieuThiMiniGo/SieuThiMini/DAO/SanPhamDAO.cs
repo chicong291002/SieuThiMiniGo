@@ -8,24 +8,61 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 using System.Xml;
+using SieuThiMini.BUS;
+
 
 namespace SieuThiMini.DAO
 {
     internal class SanPhamDAO
     {
+        
         public static DataTable laytoanboSanPham()
         {
             SqlConnection Conn = Connection.GetSqlConnection();
             Conn.Open();
-            string query = "select * from SanPham";
+            string query = "select * from SanPham ORDER BY MaSP ASC";
             SqlCommand command = new SqlCommand(query, Conn);
             SqlDataAdapter dataAdapter = new SqlDataAdapter();
             dataAdapter.SelectCommand = command;
+
             DataTable dt = new DataTable();
             dataAdapter.Fill(dt);
-            Conn.Close();
             return dt;
         }
+        
+        
+        /*
+        public static List<SanPham> laytoanboSanPham()
+        {
+            List<SanPham> sanPhams = new List<SanPham>();
+            SqlConnection Conn = Connection.GetSqlConnection();
+            Conn.Open();
+            string query = "select * from SanPham ORDER BY MaSP ASC";
+            SqlCommand command = new SqlCommand(query, Conn);
+            SqlDataReader dataReader = command.ExecuteReader();
+            if (dataReader != null)
+            {
+                while (dataReader.Read())
+                {
+                    SanPham sp = new SanPham();
+                    sp.MaSP = dataReader.GetValue(0).ToString();
+                    sp.TenSP = dataReader.GetValue(1).ToString();
+                    sp.DonGia = dataReader.GetValue(2).ToString();
+                    sp.DonViTinh = dataReader.GetValue(3).ToString();
+                    sp.SoLuong = dataReader.GetValue(4).ToString();
+                    sp.MaLoai = dataReader.GetValue(5).ToString();
+                    sp.MaNCC = dataReader.GetValue(6).ToString();
+                    sp.Anh = Encoding.Unicode.GetBytes(dataReader.GetValue(7).ToString());
+                    
+                    sanPhams.Add(sp);
+
+                }
+            }
+            dataReader.Close();
+            Conn.Close();
+            return sanPhams;
+        }
+        */
 
         [Obsolete]
         public static void insert_SP(SanPham sp)
@@ -72,7 +109,7 @@ namespace SieuThiMini.DAO
             SqlConnection Conn = Connection.GetSqlConnection();
             Conn.Open();
             string query = "Update SanPham Set  TenSP = @TenSP,DonGia=@DonGia,DonViTinh = @DonViTinh," +
-                "SoLuong = @SoLuong,MaLoai = @MaLoai,MaNhaCungCap = @MaNhaCungCap where MaSP = @MaSP";
+                "SoLuong = @SoLuong,MaLoai = @MaLoai,MaNhaCungCap = @MaNhaCungCap,Image = @Image where MaSP = @MaSP";
             SqlCommand command = new SqlCommand(query, Conn);
             command.Parameters.Add("@MaSP", SqlDbType.NVarChar).Value = sp.MaSP;
             command.Parameters.Add("@TenSP", SqlDbType.NVarChar).Value = sp.TenSP;
@@ -97,11 +134,12 @@ namespace SieuThiMini.DAO
             Conn.Close();
         }
 
-        public static DataTable search_sp(string tennv)
+        public static DataTable search_sp(string tuKhoa)
         {
             SqlConnection Conn = Connection.GetSqlConnection();
             Conn.Open();
-            string query = "select * from SanPham where Tennv like '%" + tennv + "%'";
+            string query = "select * from SanPham where MaSP like '%" + tuKhoa + "%' or TenSP like '%"
+                + tuKhoa + "%' or DonGia like '%" + tuKhoa + "%' or DonViTinh like '%" + tuKhoa + "%' or MaNhaCungCap like '%" + tuKhoa + "%'";
             SqlCommand command = new SqlCommand(query, Conn);
             SqlDataAdapter dataAdapter = new SqlDataAdapter();
             dataAdapter.SelectCommand = command;
@@ -141,5 +179,7 @@ namespace SieuThiMini.DAO
             sqlConnection.Close();
             return dataTable;
         }
+
+
     }
 }

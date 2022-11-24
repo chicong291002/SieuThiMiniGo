@@ -30,13 +30,13 @@ namespace SieuThiMini.GUI
 
         }
 
-        public void xuLyHienThiNhap(List<ListViewItem> dspn,string nhanVien,string nhaCungCap)
+        public void xuLyHienThiNhap(List<ListViewItem> dspn,string nhanVien,string nhaCungCap,DateTime ngayLap)
         {
             try
             {
                 txtNhanVien.Text = nhanVien;
                 txtNhaCungCap.Text = nhaCungCap;
-                txtNgayLap.Text = DateTime.Now.ToString("dd/mm/yyyy");
+                txtNgayLap.Text = ngayLap.ToString();
                 foreach(ListViewItem s in dspn)
                 {
                     table_CTPN.Items.Add(s);                    
@@ -52,6 +52,16 @@ namespace SieuThiMini.GUI
         private void table_CTPN_SelectedIndexChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void txtNgayLap_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

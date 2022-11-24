@@ -17,7 +17,7 @@ namespace SieuThiMini.DAO
             SqlConnection Conn = Connection.GetSqlConnection();
             Conn.Open();
 
-            string query = "select * from NhanVien";
+            string query = "select * from NhanVien ORDER BY MaNV ASC";
 
             SqlCommand command = new SqlCommand(query, Conn);
             SqlDataAdapter dataAdapter = new SqlDataAdapter();
@@ -26,6 +26,41 @@ namespace SieuThiMini.DAO
             dataAdapter.Fill(dt);
             Conn.Close();
             return dt;
+        }
+
+
+        public static List<NhanVien> getAllNhanVien()
+        {
+            List<NhanVien> nhanViens = new List<NhanVien>();
+            SqlConnection Conn = Connection.GetSqlConnection();
+            Conn.Open();
+            string query = "select * from NhanVien ORDER BY MaNV ASC";
+            SqlCommand command = new SqlCommand(query, Conn);
+            SqlDataReader dataReader = command.ExecuteReader();
+            if (dataReader != null)
+            {
+                while (dataReader.Read())
+                {
+                    NhanVien nv1 = new NhanVien(
+                        dataReader.GetString(dataReader.GetOrdinal("MaNV")),
+                        dataReader.GetString(dataReader.GetOrdinal("HoNV")),
+                        dataReader.GetString(dataReader.GetOrdinal("TenNV")),
+                        dataReader.GetString(dataReader.GetOrdinal("SDT")),
+                        dataReader.GetString(dataReader.GetOrdinal("CMND")),
+                        dataReader.GetString(dataReader.GetOrdinal("Email")),
+                        dataReader.GetDateTime(dataReader.GetOrdinal("NgaySinh")),
+                        dataReader.GetString(dataReader.GetOrdinal("GioiTinh")),
+                        dataReader.GetString(dataReader.GetOrdinal("Luong")),
+                        dataReader.GetString(dataReader.GetOrdinal("ViTri")),
+                        dataReader.GetDateTime(dataReader.GetOrdinal("NgayVaoLam"))
+                        );
+                    nhanViens.Add(nv1);
+
+                }
+            }
+            dataReader.Close();
+            Conn.Close();
+            return nhanViens;
         }
 
 
@@ -38,11 +73,11 @@ namespace SieuThiMini.DAO
                 "Sdt,Email,NgaySinh,GioiTinh,Luong,ViTri,NgayVaoLam) VALUES (@Manv,@Honv,@Tennv,@Cmnd,@Sdt,@Email,@NgaySinh,@GioiTinh,@Luong,@ViTri,@NgayVaoLam)";
 
             SqlCommand command = new SqlCommand(query, Conn);
-            command.Parameters.Add("@Manv", SqlDbType.NVarChar).Value = nv.Manv;
-            command.Parameters.Add("@Honv", SqlDbType.NVarChar).Value = nv.Honv;
-            command.Parameters.Add("@Tennv", SqlDbType.NVarChar).Value = nv.Tennv;
-            command.Parameters.Add("@Cmnd", SqlDbType.NVarChar).Value = nv.Cmnd;
-            command.Parameters.Add("@Sdt", SqlDbType.NVarChar).Value = nv.Sdt;
+            command.Parameters.Add("@Manv", SqlDbType.NVarChar).Value = nv.MaNV;
+            command.Parameters.Add("@Honv", SqlDbType.NVarChar).Value = nv.HoNV;
+            command.Parameters.Add("@Tennv", SqlDbType.NVarChar).Value = nv.TenNV;
+            command.Parameters.Add("@Cmnd", SqlDbType.NVarChar).Value = nv.CMND;
+            command.Parameters.Add("@Sdt", SqlDbType.NVarChar).Value = nv.SDT;
             command.Parameters.Add("@Email", SqlDbType.NVarChar).Value = nv.Email;
             command.Parameters.Add("@NgaySinh", SqlDbType.NVarChar).Value = nv.NgaySinh;
             command.Parameters.Add("@GioiTinh", SqlDbType.NVarChar).Value = nv.GioiTinh;
@@ -64,11 +99,11 @@ namespace SieuThiMini.DAO
             
             SqlCommand command = new SqlCommand(query, Conn);
 
-            command.Parameters.Add("@Manv", SqlDbType.NVarChar).Value = nv.Manv;
-            command.Parameters.Add("@Honv", SqlDbType.NVarChar).Value = nv.Honv;
-            command.Parameters.Add("@Tennv", SqlDbType.NVarChar).Value = nv.Tennv;
-            command.Parameters.Add("@Cmnd", SqlDbType.NVarChar).Value = nv.Cmnd;
-            command.Parameters.Add("@Sdt", SqlDbType.NVarChar).Value = nv.Sdt;
+            command.Parameters.Add("@Manv", SqlDbType.NVarChar).Value = nv.MaNV;
+            command.Parameters.Add("@Honv", SqlDbType.NVarChar).Value = nv.HoNV;
+            command.Parameters.Add("@Tennv", SqlDbType.NVarChar).Value = nv.TenNV;
+            command.Parameters.Add("@Cmnd", SqlDbType.NVarChar).Value = nv.CMND;
+            command.Parameters.Add("@Sdt", SqlDbType.NVarChar).Value = nv.SDT;
             command.Parameters.Add("@Email", SqlDbType.NVarChar).Value = nv.Email;
             command.Parameters.Add("@NgaySinh", SqlDbType.NVarChar).Value = nv.NgaySinh;
             command.Parameters.Add("@GioiTinh", SqlDbType.NVarChar).Value = nv.GioiTinh;

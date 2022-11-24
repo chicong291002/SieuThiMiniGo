@@ -9,7 +9,7 @@ namespace SieuThiMini.DTO
     internal class HoaDonDTO
     {
         private string invoice_id, employee_id, customer_id;
-        private DateTime dateFounded;
+        private string dateFounded;
         private float totalMoney;
 
         public HoaDonDTO()
@@ -17,7 +17,7 @@ namespace SieuThiMini.DTO
 
         }
 
-        public HoaDonDTO(string invoice_id, string employee_id, string customer_id, DateTime dateFounded, float totalMoney)
+        public HoaDonDTO(string invoice_id, string employee_id, string customer_id, string dateFounded, float totalMoney)
         {
             this.Invoice_id = invoice_id;
             this.Employee_id = employee_id;
@@ -29,7 +29,7 @@ namespace SieuThiMini.DTO
         public string Invoice_id { get => invoice_id; set => invoice_id = value; }
         public string Employee_id { get => employee_id; set => employee_id = value; }
         public string Customer_id { get => customer_id; set => customer_id = value; }
-        public DateTime DateFounded { get => dateFounded; set => dateFounded = value; }
+        public string DateFounded { get => dateFounded; set => dateFounded = value; }
         public float TotalMoney { get => totalMoney; set => totalMoney = value; }
     }
 }

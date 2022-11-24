@@ -15,20 +15,52 @@ namespace SieuThiMini.DAO
     {
         public static bool flag = false;
 
-        public static DataTable layToanBoHoaDon()
+        
+        public static DataTable docHD()
         {
-            SqlConnection Conn = Connection.GetSqlConnection();
-            Conn.Open();
-            string query = "select * from HoaDon";
-            SqlCommand command = new SqlCommand(query, Conn);
-            SqlDataAdapter dataAdapter = new SqlDataAdapter();
-            dataAdapter.SelectCommand = command;
-            DataTable dt = new DataTable();
-            dataAdapter.Fill(dt);
-            Conn.Close();
-            return dt;
+            SqlConnection conn = Connection.GetSqlConnection();
+            conn.Open();
+            string query = "select * from HoaDon ORDER BY MaHD ASC";
+
+            SqlCommand sqlCommand = new SqlCommand(query, conn);    
+
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
+
+            DataTable dataTable = new DataTable();
+            sqlDataAdapter.Fill(dataTable); 
+            conn.Close();
+            return dataTable;
         }
         
+        /*
+        public static List<HoaDonDTO> docHD()
+        {
+            List<HoaDonDTO> hoaDonDTOs = new List<HoaDonDTO>();
+            SqlConnection Conn = Connection.GetSqlConnection();
+            Conn.Open();
+            string query = "select * from HoaDon ORDER BY MaHD ASC";
+            SqlCommand command = new SqlCommand(query, Conn);
+            SqlDataReader dataReader = command.ExecuteReader();
+            if (dataReader != null)
+            {
+                while (dataReader.Read())
+                {
+                    HoaDonDTO hd = new HoaDonDTO(
+                        dataReader.GetString(dataReader.GetOrdinal("MaHD")),
+                        dataReader.GetString(dataReader.GetOrdinal("MaNV")),
+                        dataReader.GetString(dataReader.GetOrdinal("MaKH")),
+                        dataReader.GetString(dataReader.GetOrdinal("NgayLap")),
+                        dataReader.GetString(dataReader.GetOrdinal("TongTien"))
+                        );
+                    hoaDonDTOs.Add(hd);
+
+                }
+            }
+            dataReader.Close();
+            Conn.Close();
+            return hoaDonDTOs;
+        }
+        */
         public static void themHD(HoaDonDTO hd)
         {
             try
@@ -48,10 +80,10 @@ namespace SieuThiMini.DAO
 
                 flag = true;
             }
-            catch (SqlException)
+            catch (SqlException ex)
             {
                 flag = false;
-                MessageBox.Show("Thêm hóa đơn thất bại!");
+                MessageBox.Show("Thêm hóa đơn thất bại!"+ex.Message);
             }
         }
 
@@ -81,19 +113,32 @@ namespace SieuThiMini.DAO
             sqlCommand.ExecuteNonQuery();
             conn.Close();
         }
+
         public static DataTable timHD(string tuKhoa)
         {
             SqlConnection conn = Connection.GetSqlConnection();
             conn.Open();
-            string qry = "select * from HoaDon where MaHD like '%" + tuKhoa + "%' or MaNV like '%" + tuKhoa + "%' or MaKH like '%" + tuKhoa + "%'" +
-                " or NgayLap like '%" + tuKhoa + "%' or TongTien like '%" + tuKhoa + "%'";
+            string qry = "select * from HoaDon where MaHD like '%" + tuKhoa + "%' or MaNV like '%" + tuKhoa + "%' or MaKH like '%"+tuKhoa + "%' or NgayLap like '%" + tuKhoa + "%' or TongTien like '%" + tuKhoa + "%'";
             SqlCommand command = new SqlCommand(qry, conn);
+
+
             SqlDataAdapter dataAdapter = new SqlDataAdapter();
             dataAdapter.SelectCommand = command;
             DataTable dt = new DataTable();
             dataAdapter.Fill(dt);
             conn.Close();
             return dt;
+        }
+
+        public static void xoaKH(string maKH)
+        {
+            SqlConnection conn = Connection.GetSqlConnection();
+            conn.Open();
+            string qry = "DELETE FROM HoaDon where MaKH=@MaKH";
+            SqlCommand sqlCommand = new SqlCommand(qry, conn);
+            sqlCommand.Parameters.Add("@MaHD", SqlDbType.NVarChar).Value = maKH;
+            sqlCommand.ExecuteNonQuery();
+            conn.Close();
         }
     }
 }

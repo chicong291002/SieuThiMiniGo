@@ -58,6 +58,7 @@
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(121, 117);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(295, 22);
             this.txtEmail.TabIndex = 2;
@@ -65,9 +66,12 @@
             // btnHienThi
             // 
             this.btnHienThi.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnHienThi.Location = new System.Drawing.Point(142, 267);
+            this.btnHienThi.Image = global::SieuThiMini.Properties.Resources.confirm;
+            this.btnHienThi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHienThi.Location = new System.Drawing.Point(145, 245);
+            this.btnHienThi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnHienThi.Name = "btnHienThi";
-            this.btnHienThi.Size = new System.Drawing.Size(153, 68);
+            this.btnHienThi.Size = new System.Drawing.Size(190, 48);
             this.btnHienThi.TabIndex = 3;
             this.btnHienThi.Text = "Hiển Thị Mật Khẩu";
             this.btnHienThi.UseVisualStyleBackColor = true;
@@ -86,11 +90,15 @@
             // 
             // btnQuayVe
             // 
-            this.btnQuayVe.Location = new System.Drawing.Point(315, 343);
+            this.btnQuayVe.Image = global::SieuThiMini.Properties.Resources.exit;
+            this.btnQuayVe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnQuayVe.Location = new System.Drawing.Point(340, 324);
+            this.btnQuayVe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnQuayVe.Name = "btnQuayVe";
-            this.btnQuayVe.Size = new System.Drawing.Size(101, 35);
+            this.btnQuayVe.Size = new System.Drawing.Size(129, 49);
             this.btnQuayVe.TabIndex = 5;
             this.btnQuayVe.Text = "Quay Về";
+            this.btnQuayVe.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnQuayVe.UseVisualStyleBackColor = true;
             this.btnQuayVe.Click += new System.EventHandler(this.btnQuayVe_Click);
             // 
@@ -99,7 +107,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Aqua;
-            this.ClientSize = new System.Drawing.Size(441, 400);
+            this.ClientSize = new System.Drawing.Size(481, 384);
             this.Controls.Add(this.btnQuayVe);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnHienThi);
@@ -107,6 +115,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.Color.Black;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "QuenMatKhau";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QuenMatKhau";

@@ -16,9 +16,6 @@ namespace SieuThiMini.DTO
         {
 
         }
-
-
-
         public string MaSP { get => maSP; set => maSP = value; }
         public string TenSP { get => tenSP; set => tenSP = value; }
         public string MaHD { get => maHD; set => maHD = value; }

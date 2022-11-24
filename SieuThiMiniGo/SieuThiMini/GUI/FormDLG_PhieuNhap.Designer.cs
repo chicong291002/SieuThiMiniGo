@@ -41,7 +41,6 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnInPhieu = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -49,7 +48,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(312, 23);
+            this.label1.Location = new System.Drawing.Point(312, 11);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(260, 32);
             this.label1.TabIndex = 0;
@@ -57,7 +56,8 @@
             // 
             // txtNhanVien
             // 
-            this.txtNhanVien.Location = new System.Drawing.Point(138, 65);
+            this.txtNhanVien.Location = new System.Drawing.Point(205, 65);
+            this.txtNhanVien.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNhanVien.Name = "txtNhanVien";
             this.txtNhanVien.Size = new System.Drawing.Size(244, 22);
             this.txtNhanVien.TabIndex = 1;
@@ -82,10 +82,12 @@
             // 
             // txtNgayLap
             // 
-            this.txtNgayLap.Location = new System.Drawing.Point(138, 108);
+            this.txtNgayLap.Location = new System.Drawing.Point(205, 108);
+            this.txtNgayLap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNgayLap.Name = "txtNgayLap";
             this.txtNgayLap.Size = new System.Drawing.Size(244, 22);
             this.txtNgayLap.TabIndex = 3;
+            this.txtNgayLap.TextChanged += new System.EventHandler(this.txtNgayLap_TextChanged);
             // 
             // label4
             // 
@@ -98,7 +100,8 @@
             // 
             // txtNhaCungCap
             // 
-            this.txtNhaCungCap.Location = new System.Drawing.Point(138, 161);
+            this.txtNhaCungCap.Location = new System.Drawing.Point(205, 161);
+            this.txtNhaCungCap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNhaCungCap.Name = "txtNhaCungCap";
             this.txtNhaCungCap.Size = new System.Drawing.Size(244, 22);
             this.txtNhaCungCap.TabIndex = 5;
@@ -115,6 +118,7 @@
             this.table_CTPN.GridLines = true;
             this.table_CTPN.HideSelection = false;
             this.table_CTPN.Location = new System.Drawing.Point(36, 214);
+            this.table_CTPN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.table_CTPN.Name = "table_CTPN";
             this.table_CTPN.Size = new System.Drawing.Size(804, 239);
             this.table_CTPN.TabIndex = 7;
@@ -125,7 +129,6 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "Mã SP";
-            this.columnHeader1.Width = 160;
             // 
             // columnHeader2
             // 
@@ -140,39 +143,30 @@
             // columnHeader4
             // 
             this.columnHeader4.Text = "Đơn Giá";
-            this.columnHeader4.Width = 160;
+            this.columnHeader4.Width = 120;
             // 
             // columnHeader5
             // 
             this.columnHeader5.Text = "Thành Tiền";
-            this.columnHeader5.Width = 180;
-            // 
-            // btnInPhieu
-            // 
-            this.btnInPhieu.Location = new System.Drawing.Point(251, 473);
-            this.btnInPhieu.Name = "btnInPhieu";
-            this.btnInPhieu.Size = new System.Drawing.Size(131, 45);
-            this.btnInPhieu.TabIndex = 8;
-            this.btnInPhieu.Text = "In Phiếu Nhập";
-            this.btnInPhieu.UseVisualStyleBackColor = true;
-            this.btnInPhieu.Click += new System.EventHandler(this.btnInPhieu_Click);
+            this.columnHeader5.Width = 120;
             // 
             // btnThoat
             // 
-            this.btnThoat.Location = new System.Drawing.Point(472, 473);
+            this.btnThoat.Location = new System.Drawing.Point(363, 473);
+            this.btnThoat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(131, 45);
+            this.btnThoat.Size = new System.Drawing.Size(131, 46);
             this.btnThoat.TabIndex = 9;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // FormDLG_PhieuNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(884, 546);
+            this.ClientSize = new System.Drawing.Size(866, 537);
             this.Controls.Add(this.btnThoat);
-            this.Controls.Add(this.btnInPhieu);
             this.Controls.Add(this.table_CTPN);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtNhaCungCap);
@@ -181,6 +175,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtNhanVien);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormDLG_PhieuNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormDLG_PhieuNhap";
@@ -205,7 +200,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.Button btnInPhieu;
         private System.Windows.Forms.Button btnThoat;
     }
 }

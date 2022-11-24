@@ -6,23 +6,35 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace SieuThiMini.DAO
 {
     internal class LoaiSanPhamDAO
     {
-        public static DataTable laytoanboSanPham()
+        public static List<loaiSanPham> GetAllLoaiSanPhams()
         {
+            List<loaiSanPham> loaiSanPhams = new List<loaiSanPham>();
             SqlConnection Conn = Connection.GetSqlConnection();
             Conn.Open();
-            string query = "select * from LoaiSanPham";
+            string query = "select * from LoaiSanPham ORDER BY MaLoai ASC";
             SqlCommand command = new SqlCommand(query, Conn);
-            SqlDataAdapter dataAdapter = new SqlDataAdapter();
-            dataAdapter.SelectCommand = command;
-            DataTable dt = new DataTable();
-            dataAdapter.Fill(dt);
+            SqlDataReader dataReader = command.ExecuteReader();
+            if (dataReader != null)
+            {
+                while (dataReader.Read())
+                {
+                    loaiSanPham tk1 = new loaiSanPham(
+                        dataReader.GetString(dataReader.GetOrdinal("MaLoai")),
+                        dataReader.GetString(dataReader.GetOrdinal("TenLoai"))
+                        );
+                    loaiSanPhams.Add(tk1);
+
+                }
+            }
+            dataReader.Close();
             Conn.Close();
-            return dt;
+            return loaiSanPhams;
         }
 
         [Obsolete]
@@ -41,14 +53,22 @@ namespace SieuThiMini.DAO
         [Obsolete]
         public static void update_sp(loaiSanPham lsp)
         {
-            SqlConnection Conn = Connection.GetSqlConnection();
-            Conn.Open();
-            string query = "Update SanPham Set TenLoai = @TenLoai where MaLoai = @MaLoai";
-            SqlCommand command = new SqlCommand(query, Conn);
-            command.Parameters.Add("@MaLoai", SqlDbType.NVarChar).Value = lsp.MaLoai;
-            command.Parameters.Add("@TenLoai", SqlDbType.NVarChar).Value = lsp.TenLoai;
-            command.ExecuteNonQuery();
-            Conn.Close();
+            try
+            {
+                SqlConnection Conn = Connection.GetSqlConnection();
+                Conn.Open();
+                string query = "Update LoaiSanPham Set TenLoai = @TenLoai where MaLoai = @MaLoai";
+                SqlCommand command = new SqlCommand(query, Conn);
+                command.Parameters.Add("@MaLoai", SqlDbType.NVarChar).Value = lsp.MaLoai;
+                command.Parameters.Add("@TenLoai", SqlDbType.NVarChar).Value = lsp.TenLoai;
+                command.ExecuteNonQuery();
+                Conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                throw;
+            }
         }
 
         public static void delete_sp(string ma)

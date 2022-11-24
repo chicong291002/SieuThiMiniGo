@@ -7,28 +7,32 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace SieuThiMini.BUS
 {
     internal class PhieuNhapBUS
     {
-        
+
         public static DataTable layToanBoDanhSach()
         {
-            return  PhieuNhapDAO.layToanBoPhieuNhap();
+            return PhieuNhapDAO.layToanBoPhieuNhap();
         }
 
         [Obsolete]
-        public static void insert(string[] nhaCungCap, string[] nhanVien,DateTime ngayLap, float tongTien)
+        public static void insert(string[] nhaCungCap, string[] nhanVien, DateTime ngayLap, float tongTien)
         {
             string NhaCungCap = nhaCungCap[0];
             string NhanVien = nhanVien[0];
+
+
             PhieuNhapHang pnh = new PhieuNhapHang();
             pnh.MaNCC = NhaCungCap;
             pnh.MaNV = NhanVien;
             pnh.TongTien = tongTien;
             pnh.NgayLap = ngayLap;
             PhieuNhapDAO.insert_PN(pnh);
+
         }
 
         public int getLastID()

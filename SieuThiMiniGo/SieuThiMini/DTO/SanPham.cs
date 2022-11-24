@@ -9,11 +9,15 @@ namespace SieuThiMini.DTO
     internal class SanPham
     {
         private string maSP,donViTinh,maLoai,tenSP,maNCC;
-        private float donGia;
-        private int soLuong;
+        private string donGia;
+        private string soLuong;
         private byte[] anh;
 
-        public SanPham(string maSP, string tenSP, float donGia, string donViTinh, int soLuong, string maLoai, string maNCC, byte[] anh)
+        public SanPham()
+        {
+        }
+
+        public SanPham(string maSP, string tenSP, string donGia, string donViTinh, string soLuong, string maLoai, string maNCC, byte[] anh)
         {
             this.maSP = maSP;
             this.tenSP = tenSP;
@@ -30,8 +34,8 @@ namespace SieuThiMini.DTO
         public string MaLoai { get => maLoai; set => maLoai = value; }
         public string TenSP { get => tenSP; set => tenSP = value; }
         public string MaNCC { get => maNCC; set => maNCC = value; }
-        public float DonGia { get => donGia; set => donGia = value; }
-        public int SoLuong { get => soLuong; set => soLuong = value; }
+        public string DonGia { get => donGia; set => donGia = value; }
+        public string SoLuong { get => soLuong; set => soLuong = value; }
         public byte[] Anh { get => anh; set => anh = value; }
     }
 }
