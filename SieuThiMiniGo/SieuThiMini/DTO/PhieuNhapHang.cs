@@ -8,7 +8,8 @@ namespace SieuThiMini.DTO
 {
     internal class PhieuNhapHang
     {
-        private string maPhieu, maNV,maNCC;
+        private int maPhieu;
+        private string maNV,maNCC;
         private DateTime ngayLap;
         private float tongTien;
 
@@ -16,7 +17,8 @@ namespace SieuThiMini.DTO
         {
         }
 
-        public PhieuNhapHang(string maPhieu, string maNV, string maNCC, DateTime ngayLap, float tongTien)
+
+        public PhieuNhapHang(int maPhieu, string maNV, string maNCC, DateTime ngayLap, float tongTien)
         {
             this.MaPhieu = maPhieu;
             this.MaNV = maNV;
@@ -25,7 +27,7 @@ namespace SieuThiMini.DTO
             this.TongTien = tongTien;
         }
 
-        public string MaPhieu { get => maPhieu; set => maPhieu = value; }
+        public int MaPhieu { get => maPhieu; set => maPhieu = value; }
         public string MaNV { get => maNV; set => maNV = value; }
         public string MaNCC { get => maNCC; set => maNCC = value; }
         public DateTime NgayLap { get => ngayLap; set => ngayLap = value; }

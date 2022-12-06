@@ -1,4 +1,5 @@
 ﻿using Microsoft.Office.Interop.Excel;
+using SieuThiMini.BUS;
 using SieuThiMini.DTO;
 using System;
 using System.Collections;
@@ -8,6 +9,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using DataTable = System.Data.DataTable;
 
 namespace SieuThiMini.DAO
@@ -65,6 +67,33 @@ namespace SieuThiMini.DAO
                 throw;
             }
             return -1;
+        }
+
+        public static List<PhieuNhapHang> compareDateTime(string startDay, string endDay)
+        {
+
+            List<PhieuNhapHang> pnh = new List<PhieuNhapHang>();
+            SqlConnection Conn = Connection.GetSqlConnection();
+            Conn.Open();
+            String query = "SELECT * from PhieuNhapHang where NgayLap >= '" + startDay + "' and NgayLap <= '" + endDay + "'";
+            SqlCommand command = new SqlCommand(query, Conn);
+            SqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+              
+                PhieuNhapHang phieuNhapHang = new PhieuNhapHang(
+                       reader.GetInt32(0),
+                       reader.GetString(1),
+                       reader.GetString(2),
+                       reader.GetDateTime(reader.GetOrdinal("NgayLap")),
+                       (float)reader.GetDouble(reader.GetOrdinal("TongTien"))
+                );
+                pnh.Add(phieuNhapHang);
+            }
+            Conn.Close();
+
+
+            return pnh;
         }
 
 

@@ -10,6 +10,9 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing.Imaging;
+using System.Drawing;
+using System;
 
 namespace SieuThiMini.GUI
 {
@@ -63,5 +66,16 @@ namespace SieuThiMini.GUI
         {
 
         }
+
+        private void btnInPhieuNhap_Click(object sender, EventArgs e)
+        { 
+
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+           
+        }
+
     }
 }

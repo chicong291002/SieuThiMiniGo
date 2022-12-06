@@ -12,6 +12,7 @@ namespace SieuThiMini.DAO
 {
     internal class CTPhieuNhapDAO
     {
+        /*
         public static DataTable layToanBoPhieuNhap()
         {
             SqlConnection Conn = Connection.GetSqlConnection();
@@ -25,6 +26,33 @@ namespace SieuThiMini.DAO
             dataAdapter.Fill(dt);
             Conn.Close();
             return dt;
+        }
+        */
+
+        public static List<CTPhieuNhapHang> layToanBoPhieuNhap()
+        {
+            List<CTPhieuNhapHang> cTPhieuNhapHangs = new List<CTPhieuNhapHang>();
+            SqlConnection Conn = Connection.GetSqlConnection();
+            Conn.Open();
+            string query = "select * from CT_PhieuNhapHang ORDER BY MaPhieu ASC";
+            SqlCommand command = new SqlCommand(query, Conn);
+            SqlDataReader dataReader = command.ExecuteReader();
+            if (dataReader != null)
+            {
+                while (dataReader.Read())
+                {
+                    CTPhieuNhapHang ctpnh = new CTPhieuNhapHang();
+                    ctpnh.MaPhieu = dataReader.GetInt32(dataReader.GetOrdinal("MaPhieu"));
+                    ctpnh.MaSP = dataReader.GetString(1);
+                    ctpnh.SoLuong = dataReader.GetInt32(dataReader.GetOrdinal("SoLuong"));
+                    ctpnh.DonGia = (float)dataReader.GetDouble(dataReader.GetOrdinal("DonGia"));
+                    ctpnh.ThanhTien = (float)dataReader.GetDouble(dataReader.GetOrdinal("ThanhTien"));
+                    cTPhieuNhapHangs.Add(ctpnh);
+                }
+            }
+            dataReader.Close();
+            Conn.Close();
+            return cTPhieuNhapHangs;
         }
 
         public static DataTable getPhieuNhap(string MaPN)

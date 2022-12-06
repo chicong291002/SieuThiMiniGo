@@ -36,6 +36,7 @@
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.btnMaKH = new System.Windows.Forms.Button();
             this.txtSDT_inKH = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dateTimeNgaySinh_inKH = new System.Windows.Forms.DateTimePicker();
@@ -45,6 +46,10 @@
             this.txtCCCD_inKH = new System.Windows.Forms.TextBox();
             this.txtHoKH = new System.Windows.Forms.TextBox();
             this.txtMaKH = new System.Windows.Forms.TextBox();
+            this.btnXoa_inKH = new System.Windows.Forms.Button();
+            this.btnSua_inKH = new System.Windows.Forms.Button();
+            this.btnDoc_inKH = new System.Windows.Forms.Button();
+            this.btnThem_inKH = new System.Windows.Forms.Button();
             this.label29 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
@@ -126,10 +131,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.tableCTHD = new System.Windows.Forms.DataGridView();
             this.tableHoaDon = new System.Windows.Forms.DataGridView();
-            this.btnXoa_inKH = new System.Windows.Forms.Button();
-            this.btnSua_inKH = new System.Windows.Forms.Button();
-            this.btnDoc_inKH = new System.Windows.Forms.Button();
-            this.btnThem_inKH = new System.Windows.Forms.Button();
             this.tabPage3.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tableKhachHang)).BeginInit();
@@ -157,7 +158,7 @@
             this.tabPage3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage3.Size = new System.Drawing.Size(1275, 661);
+            this.tabPage3.Size = new System.Drawing.Size(1274, 658);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Khách hàng";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -221,6 +222,7 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.Transparent;
+            this.panel6.Controls.Add(this.btnMaKH);
             this.panel6.Controls.Add(this.txtSDT_inKH);
             this.panel6.Controls.Add(this.label2);
             this.panel6.Controls.Add(this.dateTimeNgaySinh_inKH);
@@ -247,6 +249,18 @@
             this.panel6.Size = new System.Drawing.Size(573, 646);
             this.panel6.TabIndex = 0;
             this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
+            // 
+            // btnMaKH
+            // 
+            this.btnMaKH.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMaKH.Location = new System.Drawing.Point(468, 75);
+            this.btnMaKH.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnMaKH.Name = "btnMaKH";
+            this.btnMaKH.Size = new System.Drawing.Size(58, 22);
+            this.btnMaKH.TabIndex = 20;
+            this.btnMaKH.Text = "...";
+            this.btnMaKH.UseVisualStyleBackColor = true;
+            this.btnMaKH.Click += new System.EventHandler(this.btnMaKH_Click);
             // 
             // txtSDT_inKH
             // 
@@ -330,6 +344,58 @@
             this.txtMaKH.Size = new System.Drawing.Size(224, 22);
             this.txtMaKH.TabIndex = 10;
             // 
+            // btnXoa_inKH
+            // 
+            this.btnXoa_inKH.Image = global::SieuThiMini.Properties.Resources.delete;
+            this.btnXoa_inKH.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXoa_inKH.Location = new System.Drawing.Point(305, 491);
+            this.btnXoa_inKH.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnXoa_inKH.Name = "btnXoa_inKH";
+            this.btnXoa_inKH.Size = new System.Drawing.Size(147, 55);
+            this.btnXoa_inKH.TabIndex = 9;
+            this.btnXoa_inKH.Text = "Xóa";
+            this.btnXoa_inKH.UseVisualStyleBackColor = true;
+            this.btnXoa_inKH.Click += new System.EventHandler(this.btnXoa_inKH_Click);
+            // 
+            // btnSua_inKH
+            // 
+            this.btnSua_inKH.Image = global::SieuThiMini.Properties.Resources.update1;
+            this.btnSua_inKH.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSua_inKH.Location = new System.Drawing.Point(55, 491);
+            this.btnSua_inKH.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSua_inKH.Name = "btnSua_inKH";
+            this.btnSua_inKH.Size = new System.Drawing.Size(147, 55);
+            this.btnSua_inKH.TabIndex = 8;
+            this.btnSua_inKH.Text = "Sửa";
+            this.btnSua_inKH.UseVisualStyleBackColor = true;
+            this.btnSua_inKH.Click += new System.EventHandler(this.btnSua_inKH_Click);
+            // 
+            // btnDoc_inKH
+            // 
+            this.btnDoc_inKH.Image = global::SieuThiMini.Properties.Resources.refresh;
+            this.btnDoc_inKH.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDoc_inKH.Location = new System.Drawing.Point(305, 395);
+            this.btnDoc_inKH.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDoc_inKH.Name = "btnDoc_inKH";
+            this.btnDoc_inKH.Size = new System.Drawing.Size(147, 55);
+            this.btnDoc_inKH.TabIndex = 7;
+            this.btnDoc_inKH.Text = "Đọc DS";
+            this.btnDoc_inKH.UseVisualStyleBackColor = true;
+            this.btnDoc_inKH.Click += new System.EventHandler(this.btnDoc_inKH_Click);
+            // 
+            // btnThem_inKH
+            // 
+            this.btnThem_inKH.Image = global::SieuThiMini.Properties.Resources.add11;
+            this.btnThem_inKH.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThem_inKH.Location = new System.Drawing.Point(55, 395);
+            this.btnThem_inKH.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnThem_inKH.Name = "btnThem_inKH";
+            this.btnThem_inKH.Size = new System.Drawing.Size(147, 55);
+            this.btnThem_inKH.TabIndex = 6;
+            this.btnThem_inKH.Text = "Thêm";
+            this.btnThem_inKH.UseVisualStyleBackColor = true;
+            this.btnThem_inKH.Click += new System.EventHandler(this.btnThem_inKH_Click);
+            // 
             // label29
             // 
             this.label29.AutoSize = true;
@@ -400,7 +466,7 @@
             this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1283, 690);
+            this.tabControl1.Size = new System.Drawing.Size(1282, 687);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -415,7 +481,7 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage1.Size = new System.Drawing.Size(1275, 661);
+            this.tabPage1.Size = new System.Drawing.Size(1274, 658);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Bán hàng";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -812,7 +878,7 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage2.Size = new System.Drawing.Size(1275, 661);
+            this.tabPage2.Size = new System.Drawing.Size(1274, 658);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Hóa đơn";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -1239,63 +1305,11 @@
             this.tableHoaDon.TabIndex = 0;
             this.tableHoaDon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tableHoaDon_CellClick);
             // 
-            // btnXoa_inKH
-            // 
-            this.btnXoa_inKH.Image = global::SieuThiMini.Properties.Resources.delete;
-            this.btnXoa_inKH.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa_inKH.Location = new System.Drawing.Point(305, 491);
-            this.btnXoa_inKH.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnXoa_inKH.Name = "btnXoa_inKH";
-            this.btnXoa_inKH.Size = new System.Drawing.Size(147, 55);
-            this.btnXoa_inKH.TabIndex = 9;
-            this.btnXoa_inKH.Text = "Xóa";
-            this.btnXoa_inKH.UseVisualStyleBackColor = true;
-            this.btnXoa_inKH.Click += new System.EventHandler(this.btnXoa_inKH_Click);
-            // 
-            // btnSua_inKH
-            // 
-            this.btnSua_inKH.Image = global::SieuThiMini.Properties.Resources.update1;
-            this.btnSua_inKH.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSua_inKH.Location = new System.Drawing.Point(55, 491);
-            this.btnSua_inKH.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSua_inKH.Name = "btnSua_inKH";
-            this.btnSua_inKH.Size = new System.Drawing.Size(147, 55);
-            this.btnSua_inKH.TabIndex = 8;
-            this.btnSua_inKH.Text = "Sửa";
-            this.btnSua_inKH.UseVisualStyleBackColor = true;
-            this.btnSua_inKH.Click += new System.EventHandler(this.btnSua_inKH_Click);
-            // 
-            // btnDoc_inKH
-            // 
-            this.btnDoc_inKH.Image = global::SieuThiMini.Properties.Resources.refresh;
-            this.btnDoc_inKH.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDoc_inKH.Location = new System.Drawing.Point(305, 395);
-            this.btnDoc_inKH.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnDoc_inKH.Name = "btnDoc_inKH";
-            this.btnDoc_inKH.Size = new System.Drawing.Size(147, 55);
-            this.btnDoc_inKH.TabIndex = 7;
-            this.btnDoc_inKH.Text = "Đọc DS";
-            this.btnDoc_inKH.UseVisualStyleBackColor = true;
-            this.btnDoc_inKH.Click += new System.EventHandler(this.btnDoc_inKH_Click);
-            // 
-            // btnThem_inKH
-            // 
-            this.btnThem_inKH.Image = global::SieuThiMini.Properties.Resources.add11;
-            this.btnThem_inKH.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThem_inKH.Location = new System.Drawing.Point(55, 395);
-            this.btnThem_inKH.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnThem_inKH.Name = "btnThem_inKH";
-            this.btnThem_inKH.Size = new System.Drawing.Size(147, 55);
-            this.btnThem_inKH.TabIndex = 6;
-            this.btnThem_inKH.Text = "Thêm";
-            this.btnThem_inKH.UseVisualStyleBackColor = true;
-            this.btnThem_inKH.Click += new System.EventHandler(this.btnThem_inKH_Click);
-            // 
             // BanHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1283, 690);
+            this.ClientSize = new System.Drawing.Size(1282, 687);
             this.Controls.Add(this.tabControl1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "BanHang";
@@ -1431,6 +1445,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.Button btnMaKH;
     }
 }
 

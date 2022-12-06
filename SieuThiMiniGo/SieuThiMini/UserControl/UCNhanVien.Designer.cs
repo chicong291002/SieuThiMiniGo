@@ -64,6 +64,7 @@
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.btnMaNV = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -307,12 +308,13 @@
             this.txtMaNV.Location = new System.Drawing.Point(158, 27);
             this.txtMaNV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMaNV.Name = "txtMaNV";
-            this.txtMaNV.Size = new System.Drawing.Size(208, 27);
+            this.txtMaNV.Size = new System.Drawing.Size(110, 27);
             this.txtMaNV.TabIndex = 13;
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Cornsilk;
+            this.groupBox1.Controls.Add(this.btnMaNV);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label4);
@@ -374,7 +376,6 @@
             this.btnInAn.Size = new System.Drawing.Size(115, 50);
             this.btnInAn.TabIndex = 31;
             this.btnInAn.Text = "In Ấn";
-            this.btnInAn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnInAn.UseVisualStyleBackColor = true;
             this.btnInAn.Click += new System.EventHandler(this.btnInAn_Click);
             // 
@@ -421,13 +422,12 @@
             // 
             this.btnXoa.Image = global::SieuThiMini.Properties.Resources.delete;
             this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa.Location = new System.Drawing.Point(15, 194);
+            this.btnXoa.Location = new System.Drawing.Point(31, 198);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(118, 50);
             this.btnXoa.TabIndex = 27;
             this.btnXoa.Text = "Xóa";
-            this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click_1);
             // 
@@ -444,6 +444,18 @@
             this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            // 
+            // btnMaNV
+            // 
+            this.btnMaNV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMaNV.Location = new System.Drawing.Point(294, 28);
+            this.btnMaNV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnMaNV.Name = "btnMaNV";
+            this.btnMaNV.Size = new System.Drawing.Size(72, 26);
+            this.btnMaNV.TabIndex = 32;
+            this.btnMaNV.Text = "....";
+            this.btnMaNV.UseVisualStyleBackColor = true;
+            this.btnMaNV.Click += new System.EventHandler(this.btnMaNV_Click);
             // 
             // UCNhanVien
             // 
@@ -506,5 +518,6 @@
         private System.Windows.Forms.Button btnInAn;
         private System.Windows.Forms.Button btnXuatExcel;
         private System.Windows.Forms.Button btnNhapExcel;
+        private System.Windows.Forms.Button btnMaNV;
     }
 }

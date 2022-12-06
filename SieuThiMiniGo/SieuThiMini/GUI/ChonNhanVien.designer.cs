@@ -42,7 +42,7 @@
             this.tableChonNV.Name = "tableChonNV";
             this.tableChonNV.RowHeadersWidth = 51;
             this.tableChonNV.RowTemplate.Height = 24;
-            this.tableChonNV.Size = new System.Drawing.Size(600, 274);
+            this.tableChonNV.Size = new System.Drawing.Size(824, 274);
             this.tableChonNV.TabIndex = 3;
             this.tableChonNV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tableChonNV_CellContentClick);
             // 
@@ -50,9 +50,9 @@
             // 
             this.btnChonNV.Image = global::SieuThiMini.Properties.Resources.add11;
             this.btnChonNV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnChonNV.Location = new System.Drawing.Point(270, 384);
+            this.btnChonNV.Location = new System.Drawing.Point(380, 384);
             this.btnChonNV.Name = "btnChonNV";
-            this.btnChonNV.Size = new System.Drawing.Size(128, 54);
+            this.btnChonNV.Size = new System.Drawing.Size(146, 54);
             this.btnChonNV.TabIndex = 4;
             this.btnChonNV.Text = "Chọn";
             this.btnChonNV.UseVisualStyleBackColor = true;
@@ -61,7 +61,7 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(135, 9);
+            this.label1.Location = new System.Drawing.Point(247, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(392, 57);
             this.label1.TabIndex = 1;
@@ -70,10 +70,11 @@
             // 
             // ChonNhanVien
             // 
+            this.AcceptButton = this.btnChonNV;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Info;
-            this.ClientSize = new System.Drawing.Size(647, 450);
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ClientSize = new System.Drawing.Size(859, 450);
             this.Controls.Add(this.btnChonNV);
             this.Controls.Add(this.tableChonNV);
             this.Controls.Add(this.label1);

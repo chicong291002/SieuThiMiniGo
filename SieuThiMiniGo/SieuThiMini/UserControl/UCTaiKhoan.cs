@@ -36,7 +36,7 @@ namespace SieuThiMini.GUI
             string trangThai = cbTrangThai.Text.Trim();
 
             bool temp = false;
-            bool check = false;
+            bool check = false; 
             int i;
             if (maTK.Equals("") || tenTK.Equals("") || matKhau.Equals("") || email.Equals("") ||
                  maNV.Equals("") || phanQuyen.Equals("") || trangThai.Equals(""))
@@ -67,20 +67,15 @@ namespace SieuThiMini.GUI
                     else
                     {
 
-                            int index = dgvTaiKhoan.CurrentCell.RowIndex;
-                            if (index >= 0)
+                            //int index = dgvTaiKhoan.CurrentCell.RowIndex;
+                           // if (index >= 0)
                             {
-                                for (i = 0; i < dgvTaiKhoan.Rows.Count; i++)
+                                for (i = 0; i < dgvTaiKhoan.Rows.Count - 1; i++)
                                 {
                                     string kq = dgvTaiKhoan.Rows[i].Cells[0].Value.ToString().Trim();
                                     if (maTK.Equals(kq))
                                     {
-                                        MessageBox.Show(maTK + "===" + kq);
                                         check = true;
-                                        break;
-                                    }
-                                    if (i == dgvTaiKhoan.Rows.Count)
-                                    {
                                         break;
                                     }
                                 }
@@ -198,6 +193,11 @@ namespace SieuThiMini.GUI
             ChonNhanVien chonNhanVien = new ChonNhanVien();
             chonNhanVien.ShowDialog();
             txtMaNV.Text = ChonNhanVien.maNCC.Trim();
+        }
+
+        private void btnMaTK_Click(object sender, EventArgs e)
+        {
+            txtMaTK.Text = "TK" + (dgvTaiKhoan.Rows.Count+1);
         }
     }
 }

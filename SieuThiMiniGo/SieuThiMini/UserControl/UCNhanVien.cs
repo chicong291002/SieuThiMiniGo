@@ -145,7 +145,7 @@ namespace SieuThiMini
                                             int index = dgvNhanVien.CurrentCell.RowIndex;
                                             if (index >= 0)
                                             {
-                                                for (i = 0; i < dgvNhanVien.Rows.Count; i++)
+                                                for (i = 0; i < dgvNhanVien.Rows.Count - 1; i++)
                                                 {
                                                     string kq = dgvNhanVien.Rows[i].Cells[0].Value.ToString().Trim();
                                                     if (maNV.Equals(kq))
@@ -522,6 +522,11 @@ namespace SieuThiMini
                 NhanVienBUS.deleteNhanVien(maNV);
                 dgvNhanVien.DataSource = NhanVienBUS.GetAllNhanVien();
             }
+        }
+
+        private void btnMaNV_Click(object sender, EventArgs e)
+        {
+            txtMaNV.Text = "NV" + dgvNhanVien.Rows.Count;
         }
     }
 }

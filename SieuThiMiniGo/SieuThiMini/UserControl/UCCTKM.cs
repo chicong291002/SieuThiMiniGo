@@ -102,7 +102,7 @@ namespace SieuThiMini
                         int i = dgv_CTCTKM.CurrentCell.RowIndex;
                         if (i >= 0)
                         {
-                            for (i = 0; i < dgvCTKM.Rows.Count; i++)
+                            for (i = 0; i < dgvCTKM.Rows.Count - 1; i++)
                             {
                                 string kq = dgvCTKM.Rows[i].Cells[0].Value.ToString().Trim();
                                 MessageBox.Show(kq + "===" + ma);
@@ -113,10 +113,7 @@ namespace SieuThiMini
                                     txtPhanTram.Text = "";
                                     break;
                                 }
-                                if (i == dgvCTKM.Rows.Count)
-                                {
-                                    break;
-                                }
+                               
                             }
                         }
 
@@ -218,9 +215,9 @@ namespace SieuThiMini
                     {
 
                         int index = dgvCTKM.CurrentCell.RowIndex;
-                        if (index > 0)
+                        if (index >= 0)
                         {
-                            for (i = 0; i < dgvCTKM.Rows.Count; i++)
+                            for (i = 0; i < dgvCTKM.Rows.Count - 1; i++)
                             {
                                 string kq = dgvCTKM.Rows[i].Cells[0].Value.ToString().Trim();
                                 if (maCT.Equals(kq))
@@ -237,7 +234,7 @@ namespace SieuThiMini
 
                         if (check == false)
                         {
-                            MessageBox.Show("Thêm Nhân Viên Thành Công");
+          
                             KhuyenMaiDTO khuyenMaiDTO = new KhuyenMaiDTO(maCT, tenCT, maKH, ngayBatDau, ngayKetThuc);
                             KhuyenMaiBUS.insert(khuyenMaiDTO);
                             dgvCTKM.DataSource = KhuyenMaiBUS.docDSKM();
@@ -318,6 +315,16 @@ namespace SieuThiMini
             ChonKhachHang chonKhachHang = new ChonKhachHang();
             chonKhachHang.ShowDialog();
             txtMaKH.Text = ChonKhachHang.maKH.Trim();
+        }
+
+        private void btnMaCT_Click(object sender, EventArgs e)
+        {
+            txtMaCT.Text = "CT" + dgvCTKM.Rows.Count;
+        }
+
+        private void btnCT_MaCT_Click(object sender, EventArgs e)
+        {
+            txtMaCT_CT.Text = "CT" + dgv_CTCTKM.Rows.Count;
         }
     }
 }

@@ -63,6 +63,8 @@
             this.dgvCTKM = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.btnMaCT = new System.Windows.Forms.Button();
+            this.btnCT_MaCT = new System.Windows.Forms.Button();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_CTCTKM)).BeginInit();
@@ -185,6 +187,7 @@
             // groupBox5
             // 
             this.groupBox5.BackColor = System.Drawing.Color.White;
+            this.groupBox5.Controls.Add(this.btnCT_MaCT);
             this.groupBox5.Controls.Add(this.label12);
             this.groupBox5.Controls.Add(this.txtMaCT_CT);
             this.groupBox5.Controls.Add(this.label13);
@@ -212,7 +215,7 @@
             this.txtMaCT_CT.Location = new System.Drawing.Point(229, 30);
             this.txtMaCT_CT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMaCT_CT.Name = "txtMaCT_CT";
-            this.txtMaCT_CT.Size = new System.Drawing.Size(206, 27);
+            this.txtMaCT_CT.Size = new System.Drawing.Size(117, 27);
             this.txtMaCT_CT.TabIndex = 5;
             // 
             // label13
@@ -309,6 +312,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.btnMaCT);
             this.groupBox1.Controls.Add(this.btnKH);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label2);
@@ -424,7 +428,7 @@
             this.txtMaCT.Location = new System.Drawing.Point(152, 36);
             this.txtMaCT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMaCT.Name = "txtMaCT";
-            this.txtMaCT.Size = new System.Drawing.Size(166, 27);
+            this.txtMaCT.Size = new System.Drawing.Size(85, 27);
             this.txtMaCT.TabIndex = 24;
             // 
             // dgvCTKM
@@ -459,6 +463,26 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1235, 801);
             this.tabControl1.TabIndex = 0;
+            // 
+            // btnMaCT
+            // 
+            this.btnMaCT.Location = new System.Drawing.Point(256, 33);
+            this.btnMaCT.Name = "btnMaCT";
+            this.btnMaCT.Size = new System.Drawing.Size(62, 32);
+            this.btnMaCT.TabIndex = 36;
+            this.btnMaCT.Text = "...";
+            this.btnMaCT.UseVisualStyleBackColor = true;
+            this.btnMaCT.Click += new System.EventHandler(this.btnMaCT_Click);
+            // 
+            // btnCT_MaCT
+            // 
+            this.btnCT_MaCT.Location = new System.Drawing.Point(364, 27);
+            this.btnCT_MaCT.Name = "btnCT_MaCT";
+            this.btnCT_MaCT.Size = new System.Drawing.Size(62, 32);
+            this.btnCT_MaCT.TabIndex = 37;
+            this.btnCT_MaCT.Text = "...";
+            this.btnCT_MaCT.UseVisualStyleBackColor = true;
+            this.btnCT_MaCT.Click += new System.EventHandler(this.btnCT_MaCT_Click);
             // 
             // UCCTKM
             // 
@@ -521,5 +545,7 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnKH;
+        private System.Windows.Forms.Button btnCT_MaCT;
+        private System.Windows.Forms.Button btnMaCT;
     }
 }

@@ -154,8 +154,6 @@ C:\Users\congk\Downloads\SieuThiMiniGo\SieuThiMiniGo\SieuThiMini\bin\Debug\Micro
 C:\Users\congk\Downloads\SieuThiMiniGo\SieuThiMiniGo\SieuThiMini\obj\Debug\SieuThiMini.FormReportViewer.resources
 C:\Users\congk\Downloads\SieuThiMiniGo\SieuThiMiniGo\SieuThiMini\bin\Debug\GUI\Database1.mdf
 C:\Users\congk\Downloads\SieuThiMiniGo\SieuThiMiniGo\SieuThiMini\bin\Debug\GUI\Database1_log.ldf
-C:\Users\congk\Downloads\SieuThiMiniGo\SieuThiMiniGo\SieuThiMini\obj\Debug\SieuThiMini.csproj.SuggestedBindingRedirects.cache
-C:\Users\congk\Downloads\SieuThiMiniGo\SieuThiMiniGo\SieuThiMini\bin\Debug\EnvDTE.xml
 C:\Users\congk\Downloads\SieuThiMiniGo\SieuThiMiniGo\SieuThiMini\bin\Debug\DryIoc.dll
 C:\Users\congk\Downloads\SieuThiMiniGo\SieuThiMiniGo\SieuThiMini\bin\Debug\System.ValueTuple.dll
 C:\Users\congk\Downloads\SieuThiMiniGo\SieuThiMiniGo\SieuThiMini\bin\Debug\DryIoc.xml
@@ -213,3 +211,9 @@ C:\Users\congk\Downloads\SieuThiMiniGo\SieuThiMiniGo\SieuThiMini\obj\Debug\SieuT
 C:\Users\congk\Downloads\SieuThiMiniGo\SieuThiMiniGo\SieuThiMini\obj\Debug\SieuThiMini.FormReportPhieuNhap.resources
 C:\Users\congk\Downloads\SieuThiMiniGo\SieuThiMiniGo\SieuThiMini\obj\Debug\SieuThiMini.GUI.ChonKhachHang.resources
 C:\Users\congk\Downloads\SieuThiMiniGo\SieuThiMiniGo\SieuThiMini\obj\Debug\SieuThiMini.GUI.ChonLoaiSanPham.resources
+C:\Users\congk\Downloads\SieuThiMiniGo\SieuThiMiniGo\SieuThiMini\bin\Debug\EnvDTE.xml
+C:\Users\congk\Downloads\SieuThiMiniGo\SieuThiMiniGo\SieuThiMini\obj\Debug\SieuThiMini.csproj.SuggestedBindingRedirects.cache
+C:\Users\congk\Downloads\SieuThiMiniGo\SieuThiMiniGo\SieuThiMini\bin\Debug\Dapper.Contrib.dll
+C:\Users\congk\Downloads\SieuThiMiniGo\SieuThiMiniGo\SieuThiMini\bin\Debug\Dapper.dll
+C:\Users\congk\Downloads\SieuThiMiniGo\SieuThiMiniGo\SieuThiMini\bin\Debug\Dapper.xml
+C:\Users\congk\Downloads\SieuThiMiniGo\SieuThiMiniGo\SieuThiMini\bin\Debug\Dapper.Contrib.xml

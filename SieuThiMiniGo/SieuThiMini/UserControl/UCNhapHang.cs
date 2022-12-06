@@ -267,7 +267,7 @@ namespace SieuThiMini.GUI
                         lvi.SubItems.Add(soLuong.ToString());
                         lvi.SubItems.Add(donGia.ToString());
                         lvi.SubItems.Add(thanhTien.ToString());
-                        MessageBox.Show(maSP + "=" + tenSP + "="+ soLuong + "=" + donGia + "=" + thanhTien);
+                       
                         dssp.Add(lvi);
                         CTPhieuNhapBUS.luuCTPhieuNhap(maSP, soLuong, donGia, thanhTien);
 
@@ -411,6 +411,19 @@ namespace SieuThiMini.GUI
             FormReportPhieuNhap formReportPhieuNhap = new FormReportPhieuNhap();
             formReportPhieuNhap.ShowDialog();
             this.Hide();
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            if(dtNgayBatDau.Value > dtNgayKetThuc.Value)
+            {
+                MessageBox.Show("Ngày bắt đầu phải nhỏ hơn ngày kết thúc");
+            }
+            else
+            {
+                table_PN.DataSource = PhieuNhapBUS.compareDateTime(dtNgayBatDau.Value.ToString().Trim(),
+                    dtNgayKetThuc.Value.ToString().Trim());
+            }
         }
     }
 }

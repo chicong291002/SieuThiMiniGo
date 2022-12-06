@@ -32,12 +32,13 @@ namespace SieuThiMini
         }
         private void QuanLy_Load(object sender, EventArgs e)
         {
-          
+            
         }
 
         private void button3_Click_1(object sender, EventArgs e)
         {
             UC_SP.BringToFront();
+            
         }
 
         private void button4_Click_1(object sender, EventArgs e)

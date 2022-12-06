@@ -48,13 +48,14 @@
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnChonMaNV = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnThem = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
-            this.btnChonMaNV = new System.Windows.Forms.Button();
+            this.btnMaTK = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTaiKhoan)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -135,10 +136,10 @@
             // 
             // txtMaTK
             // 
-            this.txtMaTK.Location = new System.Drawing.Point(195, 33);
+            this.txtMaTK.Location = new System.Drawing.Point(195, 36);
             this.txtMaTK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMaTK.Name = "txtMaTK";
-            this.txtMaTK.Size = new System.Drawing.Size(214, 30);
+            this.txtMaTK.Size = new System.Drawing.Size(128, 30);
             this.txtMaTK.TabIndex = 8;
             // 
             // txtMaNV
@@ -231,6 +232,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.btnMaTK);
             this.groupBox1.Controls.Add(this.btnChonMaNV);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.txtEmail);
@@ -255,6 +257,16 @@
             this.groupBox1.TabIndex = 22;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Tài Khoản";
+            // 
+            // btnChonMaNV
+            // 
+            this.btnChonMaNV.Location = new System.Drawing.Point(922, 33);
+            this.btnChonMaNV.Name = "btnChonMaNV";
+            this.btnChonMaNV.Size = new System.Drawing.Size(75, 30);
+            this.btnChonMaNV.TabIndex = 22;
+            this.btnChonMaNV.Text = "...";
+            this.btnChonMaNV.UseVisualStyleBackColor = true;
+            this.btnChonMaNV.Click += new System.EventHandler(this.btnChonMaNV_Click);
             // 
             // groupBox2
             // 
@@ -312,15 +324,15 @@
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
-            // btnChonMaNV
+            // btnMaTK
             // 
-            this.btnChonMaNV.Location = new System.Drawing.Point(922, 33);
-            this.btnChonMaNV.Name = "btnChonMaNV";
-            this.btnChonMaNV.Size = new System.Drawing.Size(75, 30);
-            this.btnChonMaNV.TabIndex = 22;
-            this.btnChonMaNV.Text = "...";
-            this.btnChonMaNV.UseVisualStyleBackColor = true;
-            this.btnChonMaNV.Click += new System.EventHandler(this.btnChonMaNV_Click);
+            this.btnMaTK.Location = new System.Drawing.Point(338, 36);
+            this.btnMaTK.Name = "btnMaTK";
+            this.btnMaTK.Size = new System.Drawing.Size(75, 30);
+            this.btnMaTK.TabIndex = 23;
+            this.btnMaTK.Text = "...";
+            this.btnMaTK.UseVisualStyleBackColor = true;
+            this.btnMaTK.Click += new System.EventHandler(this.btnMaTK_Click);
             // 
             // UCTaiKhoan
             // 
@@ -375,5 +387,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.ComponentModel.BackgroundWorker backgroundWorker2;
         private System.Windows.Forms.Button btnChonMaNV;
+        private System.Windows.Forms.Button btnMaTK;
     }
 }

@@ -13,7 +13,7 @@ namespace SieuThiMini.BUS
     internal class CTPhieuNhapBUS
     {
       
-        public static DataTable layToanBoDanhSach()
+        public static List<CTPhieuNhapHang> layToanBoDanhSach()
         {
             return CTPhieuNhapDAO.layToanBoPhieuNhap();
             

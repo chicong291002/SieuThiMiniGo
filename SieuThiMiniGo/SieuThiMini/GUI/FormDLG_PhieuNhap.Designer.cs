@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDLG_PhieuNhap));
             this.label1 = new System.Windows.Forms.Label();
             this.txtNhanVien = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,13 +43,15 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnThoat = new System.Windows.Forms.Button();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(312, 11);
+            this.label1.Location = new System.Drawing.Point(166, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(260, 32);
             this.label1.TabIndex = 0;
@@ -117,10 +120,10 @@
             this.table_CTPN.FullRowSelect = true;
             this.table_CTPN.GridLines = true;
             this.table_CTPN.HideSelection = false;
-            this.table_CTPN.Location = new System.Drawing.Point(36, 214);
+            this.table_CTPN.Location = new System.Drawing.Point(12, 214);
             this.table_CTPN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.table_CTPN.Name = "table_CTPN";
-            this.table_CTPN.Size = new System.Drawing.Size(804, 239);
+            this.table_CTPN.Size = new System.Drawing.Size(521, 239);
             this.table_CTPN.TabIndex = 7;
             this.table_CTPN.UseCompatibleStateImageBehavior = false;
             this.table_CTPN.View = System.Windows.Forms.View.Details;
@@ -133,26 +136,26 @@
             // columnHeader2
             // 
             this.columnHeader2.Text = "Tên SP";
-            this.columnHeader2.Width = 170;
+            this.columnHeader2.Width = 150;
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "Số Lượng";
-            this.columnHeader3.Width = 120;
+            this.columnHeader3.Width = 100;
             // 
             // columnHeader4
             // 
             this.columnHeader4.Text = "Đơn Giá";
-            this.columnHeader4.Width = 120;
+            this.columnHeader4.Width = 100;
             // 
             // columnHeader5
             // 
             this.columnHeader5.Text = "Thành Tiền";
-            this.columnHeader5.Width = 120;
+            this.columnHeader5.Width = 100;
             // 
             // btnThoat
             // 
-            this.btnThoat.Location = new System.Drawing.Point(363, 473);
+            this.btnThoat.Location = new System.Drawing.Point(205, 476);
             this.btnThoat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(131, 46);
@@ -161,11 +164,25 @@
             this.btnThoat.UseVisualStyleBackColor = true;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
+            // 
             // FormDLG_PhieuNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(866, 537);
+            this.ClientSize = new System.Drawing.Size(569, 548);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.table_CTPN);
             this.Controls.Add(this.label4);
@@ -201,5 +218,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.Button btnThoat;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
     }
 }

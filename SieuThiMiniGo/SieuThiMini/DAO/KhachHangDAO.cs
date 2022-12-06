@@ -44,12 +44,13 @@ namespace SieuThiMini.DAO
                 sqlCommand.Parameters.Add("@GioiTinh", SqlDbType.NVarChar).Value = kh.GioiTinh1;
 
                 sqlCommand.ExecuteNonQuery();
+               
                 conn.Close();
 
             }
             catch (SqlException)
             {
-                MessageBox.Show("Thêm hóa đơn thất bại!");
+                MessageBox.Show("Thêm Khách Hàng thất bại!");
             }
         }
         public static void suaKH(KhachHangDTO kh)

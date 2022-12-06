@@ -32,6 +32,12 @@ namespace SieuThiMini
         private void InitializeComponent()
         {
             this.panelThongTin = new System.Windows.Forms.Panel();
+            this.UC_ThongKe = new SieuThiMini.GUI.UserCThongKe();
+            this.UC_TaiKhoan = new SieuThiMini.GUI.UCTaiKhoan();
+            this.UC_NV = new SieuThiMini.UCNhanVien();
+            this.UC_SP = new SieuThiMini.UCSP();
+            this.UC_CTKM = new SieuThiMini.UCCTKM();
+            this.UC_NhapHang = new SieuThiMini.GUI.UCNhapHang();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnBanHang = new System.Windows.Forms.Button();
             this.btnNhapHang = new System.Windows.Forms.Button();
@@ -42,12 +48,6 @@ namespace SieuThiMini
             this.btnNhanVien = new System.Windows.Forms.Button();
             this.btnSanPham = new System.Windows.Forms.Button();
             this.btnCTKM = new System.Windows.Forms.Button();
-            this.UC_ThongKe = new SieuThiMini.GUI.UserCThongKe();
-            this.UC_TaiKhoan = new SieuThiMini.GUI.UCTaiKhoan();
-            this.UC_NV = new SieuThiMini.UCNhanVien();
-            this.UC_SP = new SieuThiMini.UCSP();
-            this.UC_CTKM = new SieuThiMini.UCCTKM();
-            this.UC_NhapHang = new SieuThiMini.GUI.UCNhapHang();
             this.panelThongTin.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -66,6 +66,65 @@ namespace SieuThiMini
             this.panelThongTin.Name = "panelThongTin";
             this.panelThongTin.Size = new System.Drawing.Size(1405, 801);
             this.panelThongTin.TabIndex = 1;
+            // 
+            // UC_ThongKe
+            // 
+            this.UC_ThongKe.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.UC_ThongKe.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.UC_ThongKe.Location = new System.Drawing.Point(3, -3);
+            this.UC_ThongKe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.UC_ThongKe.Name = "UC_ThongKe";
+            this.UC_ThongKe.Size = new System.Drawing.Size(1399, 801);
+            this.UC_ThongKe.TabIndex = 7;
+            this.UC_ThongKe.Load += new System.EventHandler(this.UC_ThongKe_Load);
+            // 
+            // UC_TaiKhoan
+            // 
+            this.UC_TaiKhoan.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.UC_TaiKhoan.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.UC_TaiKhoan.Location = new System.Drawing.Point(3, 0);
+            this.UC_TaiKhoan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.UC_TaiKhoan.Name = "UC_TaiKhoan";
+            this.UC_TaiKhoan.Size = new System.Drawing.Size(1402, 796);
+            this.UC_TaiKhoan.TabIndex = 4;
+            // 
+            // UC_NV
+            // 
+            this.UC_NV.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.UC_NV.ForeColor = System.Drawing.Color.Blue;
+            this.UC_NV.Location = new System.Drawing.Point(3, -2);
+            this.UC_NV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.UC_NV.Name = "UC_NV";
+            this.UC_NV.Size = new System.Drawing.Size(1399, 801);
+            this.UC_NV.TabIndex = 2;
+            // 
+            // UC_SP
+            // 
+            this.UC_SP.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.UC_SP.Location = new System.Drawing.Point(0, 0);
+            this.UC_SP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.UC_SP.Name = "UC_SP";
+            this.UC_SP.Size = new System.Drawing.Size(1402, 801);
+            this.UC_SP.TabIndex = 1;
+            // 
+            // UC_CTKM
+            // 
+            this.UC_CTKM.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.UC_CTKM.Location = new System.Drawing.Point(0, 0);
+            this.UC_CTKM.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.UC_CTKM.Name = "UC_CTKM";
+            this.UC_CTKM.Size = new System.Drawing.Size(1405, 801);
+            this.UC_CTKM.TabIndex = 0;
+            // 
+            // UC_NhapHang
+            // 
+            this.UC_NhapHang.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.UC_NhapHang.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.UC_NhapHang.Location = new System.Drawing.Point(0, 0);
+            this.UC_NhapHang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.UC_NhapHang.Name = "UC_NhapHang";
+            this.UC_NhapHang.Size = new System.Drawing.Size(1402, 801);
+            this.UC_NhapHang.TabIndex = 0;
             // 
             // panel1
             // 
@@ -114,7 +173,7 @@ namespace SieuThiMini
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::SieuThiMini.Properties.Resources.logoMain;
+            this.pictureBox1.Image = global::SieuThiMini.Properties.Resources.logoLogin;
             this.pictureBox1.Location = new System.Drawing.Point(63, 7);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
@@ -201,65 +260,6 @@ namespace SieuThiMini
             this.btnCTKM.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCTKM.UseVisualStyleBackColor = true;
             this.btnCTKM.Click += new System.EventHandler(this.button2_Click_1);
-            // 
-            // UC_ThongKe
-            // 
-            this.UC_ThongKe.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.UC_ThongKe.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.UC_ThongKe.Location = new System.Drawing.Point(3, -3);
-            this.UC_ThongKe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.UC_ThongKe.Name = "UC_ThongKe";
-            this.UC_ThongKe.Size = new System.Drawing.Size(1399, 801);
-            this.UC_ThongKe.TabIndex = 7;
-            this.UC_ThongKe.Load += new System.EventHandler(this.UC_ThongKe_Load);
-            // 
-            // UC_TaiKhoan
-            // 
-            this.UC_TaiKhoan.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.UC_TaiKhoan.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.UC_TaiKhoan.Location = new System.Drawing.Point(3, 0);
-            this.UC_TaiKhoan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.UC_TaiKhoan.Name = "UC_TaiKhoan";
-            this.UC_TaiKhoan.Size = new System.Drawing.Size(1402, 796);
-            this.UC_TaiKhoan.TabIndex = 4;
-            // 
-            // UC_NV
-            // 
-            this.UC_NV.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.UC_NV.ForeColor = System.Drawing.Color.Blue;
-            this.UC_NV.Location = new System.Drawing.Point(3, -2);
-            this.UC_NV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.UC_NV.Name = "UC_NV";
-            this.UC_NV.Size = new System.Drawing.Size(1399, 801);
-            this.UC_NV.TabIndex = 2;
-            // 
-            // UC_SP
-            // 
-            this.UC_SP.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.UC_SP.Location = new System.Drawing.Point(0, 0);
-            this.UC_SP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.UC_SP.Name = "UC_SP";
-            this.UC_SP.Size = new System.Drawing.Size(1402, 801);
-            this.UC_SP.TabIndex = 1;
-            // 
-            // UC_CTKM
-            // 
-            this.UC_CTKM.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.UC_CTKM.Location = new System.Drawing.Point(0, 0);
-            this.UC_CTKM.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.UC_CTKM.Name = "UC_CTKM";
-            this.UC_CTKM.Size = new System.Drawing.Size(1405, 801);
-            this.UC_CTKM.TabIndex = 0;
-            // 
-            // UC_NhapHang
-            // 
-            this.UC_NhapHang.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.UC_NhapHang.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.UC_NhapHang.Location = new System.Drawing.Point(0, 0);
-            this.UC_NhapHang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.UC_NhapHang.Name = "UC_NhapHang";
-            this.UC_NhapHang.Size = new System.Drawing.Size(1402, 801);
-            this.UC_NhapHang.TabIndex = 0;
             // 
             // QuanLy
             // 

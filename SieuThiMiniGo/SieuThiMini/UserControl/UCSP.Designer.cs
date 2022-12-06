@@ -29,8 +29,8 @@
         [System.Obsolete]
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -38,6 +38,7 @@
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.dgv_SanPham = new System.Windows.Forms.DataGridView();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.btnMaLoaiSP = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.btnXoaLoai = new System.Windows.Forms.Button();
             this.btnSuaLoai = new System.Windows.Forms.Button();
@@ -47,6 +48,7 @@
             this.label15 = new System.Windows.Forms.Label();
             this.txt_CTTenLoai = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnMaSP = new System.Windows.Forms.Button();
             this.btnMaLoai = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -139,9 +141,9 @@
             this.dgvLoaiSanPham.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvLoaiSanPham.Name = "dgvLoaiSanPham";
             this.dgvLoaiSanPham.RowHeadersWidth = 51;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Cyan;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvLoaiSanPham.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Cyan;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvLoaiSanPham.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvLoaiSanPham.RowTemplate.Height = 24;
             this.dgvLoaiSanPham.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvLoaiSanPham.Size = new System.Drawing.Size(581, 156);
@@ -167,9 +169,9 @@
             this.dgv_SanPham.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgv_SanPham.Name = "dgv_SanPham";
             this.dgv_SanPham.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Cyan;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgv_SanPham.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Cyan;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgv_SanPham.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_SanPham.RowTemplate.Height = 24;
             this.dgv_SanPham.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_SanPham.Size = new System.Drawing.Size(527, 429);
@@ -179,6 +181,7 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.btnMaLoaiSP);
             this.groupBox5.Controls.Add(this.groupBox7);
             this.groupBox5.Controls.Add(this.label14);
             this.groupBox5.Controls.Add(this.txt_CTMaLoai);
@@ -192,6 +195,16 @@
             this.groupBox5.TabIndex = 25;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Thông Tin Loại Sản Phẩm";
+            // 
+            // btnMaLoaiSP
+            // 
+            this.btnMaLoaiSP.Location = new System.Drawing.Point(433, 24);
+            this.btnMaLoaiSP.Name = "btnMaLoaiSP";
+            this.btnMaLoaiSP.Size = new System.Drawing.Size(81, 27);
+            this.btnMaLoaiSP.TabIndex = 30;
+            this.btnMaLoaiSP.Text = "...";
+            this.btnMaLoaiSP.UseVisualStyleBackColor = true;
+            this.btnMaLoaiSP.Click += new System.EventHandler(this.btnMaLoaiSP_Click);
             // 
             // groupBox7
             // 
@@ -269,7 +282,7 @@
             this.txt_CTMaLoai.Location = new System.Drawing.Point(150, 21);
             this.txt_CTMaLoai.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_CTMaLoai.Name = "txt_CTMaLoai";
-            this.txt_CTMaLoai.Size = new System.Drawing.Size(364, 27);
+            this.txt_CTMaLoai.Size = new System.Drawing.Size(262, 27);
             this.txt_CTMaLoai.TabIndex = 13;
             // 
             // label15
@@ -294,6 +307,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.btnMaSP);
             this.groupBox1.Controls.Add(this.btnMaLoai);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.groupBox2);
@@ -325,6 +339,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Sản Phẩm";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // btnMaSP
+            // 
+            this.btnMaSP.Location = new System.Drawing.Point(525, 20);
+            this.btnMaSP.Name = "btnMaSP";
+            this.btnMaSP.Size = new System.Drawing.Size(81, 27);
+            this.btnMaSP.TabIndex = 29;
+            this.btnMaSP.Text = "...";
+            this.btnMaSP.UseVisualStyleBackColor = true;
+            this.btnMaSP.Click += new System.EventHandler(this.btnMaSP_Click);
             // 
             // btnMaLoai
             // 
@@ -563,7 +587,7 @@
             this.txtMaSP.Location = new System.Drawing.Point(383, 20);
             this.txtMaSP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMaSP.Name = "txtMaSP";
-            this.txtMaSP.Size = new System.Drawing.Size(223, 27);
+            this.txtMaSP.Size = new System.Drawing.Size(127, 27);
             this.txtMaSP.TabIndex = 10;
             // 
             // label4
@@ -662,5 +686,7 @@
         private System.Windows.Forms.Button button2;
         private System.ComponentModel.BackgroundWorker backgroundWorker6;
         private System.Windows.Forms.Button btnMaLoai;
+        private System.Windows.Forms.Button btnMaLoaiSP;
+        private System.Windows.Forms.Button btnMaSP;
     }
 }

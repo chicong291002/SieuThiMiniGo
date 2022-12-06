@@ -40,6 +40,11 @@ namespace SieuThiMini.BUS
             PhieuNhapDAO phieuNhap = new PhieuNhapDAO();
             return phieuNhap.getLastID();
         }
+
+        public static List<PhieuNhapHang> compareDateTime(string startDay,string endDay)
+        {
+            return PhieuNhapDAO.compareDateTime(startDay,endDay);            
+        }
     }
 
 }

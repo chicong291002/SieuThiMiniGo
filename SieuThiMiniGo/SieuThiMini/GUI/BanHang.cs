@@ -455,6 +455,7 @@ namespace SieuThiMini
         {
             dateTimeNgaySinh_inKH.Format = DateTimePickerFormat.Custom;
             dateTimeNgaySinh_inKH.CustomFormat = "yyyy/MM/dd";
+            btnDocDSHD_Click(sender, e);
         }
 
         private void btnDoc_inKH_Click(object sender, EventArgs e)
@@ -488,6 +489,7 @@ namespace SieuThiMini
             txtSDT_inKH.Text = "";
             dateTimeNgaySinh_inKH.Text = DateTime.Now.ToString("yyyy/MM/dd");
             cbGioiTinh_inKH.SelectedItem = null;
+            MessageBox.Show("Thêm Khách Hàng Thành Công");
         }
 
         private void btnXoa_inKH_Click(object sender, EventArgs e)
@@ -497,14 +499,8 @@ namespace SieuThiMini
             string maKH = txtMaKH.Text.Trim();
             if (i >= 0)
             {
-                for (i = 0; i < tableHoaDon.Rows.Count; i++)
-                {
-                    if (i == tableHoaDon.Rows.Count - 1)
-                    {
-                        MessageBox.Show(i + "===" + tableHoaDon.Rows.Count);
-                        break;
-                    }
-
+                for (i = 0; i < tableHoaDon.Rows.Count - 1; i++)
+                {    
                     string kq = tableHoaDon.Rows[i].Cells[2].Value.ToString().Trim();
                     if (maKH.Equals(kq))
                     {
@@ -623,10 +619,16 @@ namespace SieuThiMini
             Application.Exit();
         }
 
+        private void btnMaKH_Click(object sender, EventArgs e)
+        {
+            txtMaKH.Text = "KH" + tableKhachHang.Rows.Count;
+        }
+
         private void btnThanhToan_inGH_Click(object sender, EventArgs e)
         {
             tabControl1.SelectTab(1);
             btnDocDSHD_Click(sender, e);
+           
             txtTongTien_inHD.Text = txtTongTien_inGH.Text;
 
             //MessageBox.Show(tableGioHang.Items[0].SubItems[2].Text);
@@ -648,6 +650,9 @@ namespace SieuThiMini
             }
             tableCTHD.DataSource = dssp;
 
+            txtMaHD.Text = "HD" + tableHoaDon.Rows.Count;
+            btnNgayLap_inHD_Click(null, null);
+            
             //Tao ma hoa don tu dong
             /*
             string ktn, s;

@@ -40,7 +40,9 @@ namespace SieuThiMini
             string soLuong = txtSoLuong.Text.Trim();
             string maLoai = txtMaLoai.Text.Trim();
             string maNCC = txtMaNCC.Text.Trim();
+
             byte[] anh = ImageToByteArray(pictureBox1);
+
             string checkNumber = "^[0-9 -]+$";
             Regex regexNumber = new Regex(checkNumber);
             var resNumber = regexNumber.IsMatch(soLuong);
@@ -75,7 +77,7 @@ namespace SieuThiMini
                         int index = dgv_SanPham.CurrentCell.RowIndex;
                         if (index >= 0)
                         {
-                            for (i = 0; i < dgv_SanPham.Rows.Count; i++)
+                            for (i = 0; i < dgv_SanPham.Rows.Count - 1; i++)
                             {
                                 string kq = dgv_SanPham.Rows[i].Cells[0].Value.ToString().Trim();
                                 if (maSP.Equals(kq))
@@ -196,20 +198,26 @@ namespace SieuThiMini
         {
 
             string maSP = txtMaSP.Text.Trim();
-
+          
 
             bool check = false;
             foreach (CTHoaDonDTO cthd in CTHoaDonBUS.docCTHD())
             {
-                string kq = cthd.MaSP.Trim();
-                if (maSP.Equals(kq))
+                foreach (CTPhieuNhapHang ctpnh in CTPhieuNhapBUS.layToanBoDanhSach())
                 {
-                    check = true;
+                    string kq = cthd.MaSP.Trim();
+                    string temp = ctpnh.MaSP.Trim();
+                   
+                    if (maSP.Equals(kq) || maSP.Equals(temp))
+                    {
+                        check = true;
+                        break;
+                    }
                 }
             }
             if (check == true)
             {
-                MessageBox.Show("Sản Phẩm tồn tại Hoá Đơn đã có Không thể xoá");
+                MessageBox.Show("Không thể xoá sản phẩm do trùng với danh sách phiếu nhập hoặc hoá đơn đã có");
             }
             else
             {
@@ -446,6 +454,16 @@ namespace SieuThiMini
             ChonLoaiSanPham chonLoaiSanPham = new ChonLoaiSanPham();
             chonLoaiSanPham.ShowDialog();
             txtMaLoai.Text = ChonLoaiSanPham.maLoaiSP.Trim();
+        }
+
+        private void btnMaSP_Click(object sender, EventArgs e)
+        {
+            txtMaSP.Text = "SP" + dgv_SanPham.Rows.Count;
+        }
+
+        private void btnMaLoaiSP_Click(object sender, EventArgs e)
+        {
+            txtMaLoai.Text = "L" + dgvLoaiSanPham.Rows.Count;
         }
     }
 }
