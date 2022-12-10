@@ -42,6 +42,12 @@ namespace SieuThiMini.BUS
         {
             return SanPhamDAO.locSPTheoLoai(maLoai);
         }
+
+        public static DataTable locSPTheoGia(float gia1, float gia2)
+        {
+            return SanPhamDAO.locSPTheoGia(gia1,gia2);
+        }
+
         public static DataTable timNhanhSPTheoLoai(string tuKhoa, string maLoai)
         {
             return SanPhamDAO.timNhanhSPTheoLoai(tuKhoa, maLoai);

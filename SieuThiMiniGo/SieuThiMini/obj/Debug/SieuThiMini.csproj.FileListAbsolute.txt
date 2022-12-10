@@ -217,3 +217,4 @@ C:\Users\congk\Downloads\SieuThiMiniGo\SieuThiMiniGo\SieuThiMini\bin\Debug\Dappe
 C:\Users\congk\Downloads\SieuThiMiniGo\SieuThiMiniGo\SieuThiMini\bin\Debug\Dapper.dll
 C:\Users\congk\Downloads\SieuThiMiniGo\SieuThiMiniGo\SieuThiMini\bin\Debug\Dapper.xml
 C:\Users\congk\Downloads\SieuThiMiniGo\SieuThiMiniGo\SieuThiMini\bin\Debug\Dapper.Contrib.xml
+C:\Users\congk\Downloads\SieuThiMiniGo\SieuThiMiniGo\SieuThiMini\obj\Debug\SieuThiMini.GUI.FormDLG_HoaDon.resources

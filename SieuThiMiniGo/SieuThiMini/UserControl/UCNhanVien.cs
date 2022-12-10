@@ -353,8 +353,8 @@ namespace SieuThiMini
                 txtHoNV.Text = data.Cells[1].Value.ToString();
                 txtTenNV.Text = data.Cells[2].Value.ToString();
 
-                txtSDT.Text = data.Cells[4].Value.ToString();
-                txtCMND.Text = data.Cells[3].Value.ToString();
+                txtSDT.Text = data.Cells[3].Value.ToString();
+                txtCMND.Text = data.Cells[4].Value.ToString();
 
                 txtEmail.Text = data.Cells[5].Value.ToString();
                 dtNgaySinh.Value = (DateTime)data.Cells[6].Value;

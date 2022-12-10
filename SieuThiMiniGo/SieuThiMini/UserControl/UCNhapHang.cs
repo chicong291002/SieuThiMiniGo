@@ -277,8 +277,7 @@ namespace SieuThiMini.GUI
                     ctpn.xuLyHienThiNhap(dssp, nhanVien[0], nhaCungCap[0], ngayLap);
                     table_PN.DataSource = PhieuNhapBUS.layToanBoDanhSach();
                     table_CTPN.DataSource = CTPhieuNhapBUS.layToanBoDanhSach();
-                    ctpn.ShowDialog();
-                
+                    ctpn.ShowDialog();             
                 
 
             }

@@ -29,10 +29,17 @@
         [System.Obsolete]
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtGia2 = new System.Windows.Forms.TextBox();
+            this.txtGia1 = new System.Windows.Forms.TextBox();
+            this.btnTimKiem = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgvLoaiSanPham = new System.Windows.Forms.DataGridView();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
@@ -81,6 +88,7 @@
             this.backgroundWorker4 = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorker5 = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorker6 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker7 = new System.ComponentModel.BackgroundWorker();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -101,11 +109,18 @@
             this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1225, 798);
+            this.tabControl1.Size = new System.Drawing.Size(1226, 798);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label13);
+            this.tabPage1.Controls.Add(this.label12);
+            this.tabPage1.Controls.Add(this.label11);
+            this.tabPage1.Controls.Add(this.label10);
+            this.tabPage1.Controls.Add(this.txtGia2);
+            this.tabPage1.Controls.Add(this.txtGia1);
+            this.tabPage1.Controls.Add(this.btnTimKiem);
             this.tabPage1.Controls.Add(this.groupBox3);
             this.tabPage1.Controls.Add(this.groupBox6);
             this.tabPage1.Controls.Add(this.groupBox5);
@@ -116,11 +131,74 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage1.Size = new System.Drawing.Size(1217, 769);
+            this.tabPage1.Size = new System.Drawing.Size(1218, 769);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Thông tin";
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // label13
+            // 
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(955, 274);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(72, 18);
+            this.label13.TabIndex = 37;
+            this.label13.Text = "Đến";
+            // 
+            // label12
+            // 
+            this.label12.Cursor = System.Windows.Forms.Cursors.No;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(672, 270);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(70, 33);
+            this.label12.TabIndex = 31;
+            this.label12.Text = "Giá Từ";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.ForeColor = System.Drawing.Color.Red;
+            this.label11.Location = new System.Drawing.Point(1166, 275);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(35, 16);
+            this.label11.TabIndex = 36;
+            this.label11.Text = "VNĐ";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.ForeColor = System.Drawing.Color.Red;
+            this.label10.Location = new System.Drawing.Point(884, 277);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(35, 16);
+            this.label10.TabIndex = 35;
+            this.label10.Text = "VNĐ";
+            // 
+            // txtGia2
+            // 
+            this.txtGia2.Location = new System.Drawing.Point(1023, 270);
+            this.txtGia2.Name = "txtGia2";
+            this.txtGia2.Size = new System.Drawing.Size(132, 22);
+            this.txtGia2.TabIndex = 34;
+            // 
+            // txtGia1
+            // 
+            this.txtGia1.Location = new System.Drawing.Point(748, 270);
+            this.txtGia1.Name = "txtGia1";
+            this.txtGia1.Size = new System.Drawing.Size(116, 22);
+            this.txtGia1.TabIndex = 33;
+            // 
+            // btnTimKiem
+            // 
+            this.btnTimKiem.Location = new System.Drawing.Point(872, 302);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.Size = new System.Drawing.Size(132, 42);
+            this.btnTimKiem.TabIndex = 30;
+            this.btnTimKiem.Text = "Tìm";
+            this.btnTimKiem.UseVisualStyleBackColor = true;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // groupBox3
             // 
@@ -141,9 +219,9 @@
             this.dgvLoaiSanPham.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvLoaiSanPham.Name = "dgvLoaiSanPham";
             this.dgvLoaiSanPham.RowHeadersWidth = 51;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Cyan;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvLoaiSanPham.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Cyan;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvLoaiSanPham.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvLoaiSanPham.RowTemplate.Height = 24;
             this.dgvLoaiSanPham.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvLoaiSanPham.Size = new System.Drawing.Size(581, 156);
@@ -153,11 +231,11 @@
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.dgv_SanPham);
-            this.groupBox6.Location = new System.Drawing.Point(668, 285);
+            this.groupBox6.Location = new System.Drawing.Point(668, 342);
             this.groupBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox6.Size = new System.Drawing.Size(539, 454);
+            this.groupBox6.Size = new System.Drawing.Size(533, 397);
             this.groupBox6.TabIndex = 26;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Danh Sách Sản Phẩm";
@@ -169,12 +247,12 @@
             this.dgv_SanPham.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgv_SanPham.Name = "dgv_SanPham";
             this.dgv_SanPham.RowHeadersWidth = 51;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Cyan;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgv_SanPham.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Cyan;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgv_SanPham.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_SanPham.RowTemplate.Height = 24;
             this.dgv_SanPham.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_SanPham.Size = new System.Drawing.Size(527, 429);
+            this.dgv_SanPham.Size = new System.Drawing.Size(511, 376);
             this.dgv_SanPham.TabIndex = 9;
             this.dgv_SanPham.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_SanPham_CellClick);
             this.dgv_SanPham.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_SanPham_CellContentClick);
@@ -639,40 +717,20 @@
         #endregion
 
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Button btnXoa;
-        private System.Windows.Forms.Button btnSua;
-        private System.Windows.Forms.Button btnThem;
-        private System.Windows.Forms.TextBox txtTimKiem;
-        private System.Windows.Forms.TextBox txtTenSP;
-        private System.Windows.Forms.TextBox txtDonGia;
-        private System.Windows.Forms.TextBox txtDonViTinh;
-        private System.Windows.Forms.TextBox txtSoLuong;
-        private System.Windows.Forms.TextBox txtMaSP;
-        private System.Windows.Forms.DataGridView dgv_SanPham;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btnChonAnh;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.ComponentModel.BackgroundWorker backgroundWorker2;
-        private System.Windows.Forms.GroupBox groupBox2;
         private System.ComponentModel.BackgroundWorker backgroundWorker3;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtMaNCC;
-        private System.Windows.Forms.TextBox txtMaLoai;
+        private System.ComponentModel.BackgroundWorker backgroundWorker4;
+        private System.ComponentModel.BackgroundWorker backgroundWorker5;
+        private System.ComponentModel.BackgroundWorker backgroundWorker6;
+        private System.ComponentModel.BackgroundWorker backgroundWorker7;
+        private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dgvLoaiSanPham;
         private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.DataGridView dgv_SanPham;
         private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Button btnMaLoaiSP;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.Button btnXoaLoai;
         private System.Windows.Forms.Button btnSuaLoai;
@@ -681,12 +739,40 @@
         private System.Windows.Forms.TextBox txt_CTMaLoai;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txt_CTTenLoai;
-        private System.ComponentModel.BackgroundWorker backgroundWorker4;
-        private System.ComponentModel.BackgroundWorker backgroundWorker5;
-        private System.Windows.Forms.Button button2;
-        private System.ComponentModel.BackgroundWorker backgroundWorker6;
-        private System.Windows.Forms.Button btnMaLoai;
-        private System.Windows.Forms.Button btnMaLoaiSP;
+        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnMaSP;
+        private System.Windows.Forms.Button btnMaLoai;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnXoa;
+        private System.Windows.Forms.Button btnSua;
+        private System.Windows.Forms.Button btnThem;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btnChonAnh;
+        private System.Windows.Forms.TextBox txtTimKiem;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtSoLuong;
+        private System.Windows.Forms.TextBox txtMaNCC;
+        private System.Windows.Forms.TextBox txtMaLoai;
+        private System.Windows.Forms.TextBox txtTenSP;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtDonGia;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtDonViTinh;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtMaSP;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtGia2;
+        private System.Windows.Forms.TextBox txtGia1;
+        private System.Windows.Forms.Button btnTimKiem;
     }
 }

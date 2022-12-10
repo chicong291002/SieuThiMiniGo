@@ -56,6 +56,7 @@
             this.dtNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.txtMaNV = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnMaNV = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnInAn = new System.Windows.Forms.Button();
             this.btnXuatExcel = new System.Windows.Forms.Button();
@@ -64,7 +65,6 @@
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.btnMaNV = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -275,13 +275,13 @@
             // 
             this.dgvNhanVien.BackgroundColor = System.Drawing.SystemColors.Menu;
             this.dgvNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvNhanVien.Location = new System.Drawing.Point(29, 407);
+            this.dgvNhanVien.Location = new System.Drawing.Point(17, 408);
             this.dgvNhanVien.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvNhanVien.Name = "dgvNhanVien";
             this.dgvNhanVien.RowHeadersWidth = 51;
             this.dgvNhanVien.RowTemplate.Height = 24;
             this.dgvNhanVien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvNhanVien.Size = new System.Drawing.Size(1073, 311);
+            this.dgvNhanVien.Size = new System.Drawing.Size(1115, 311);
             this.dgvNhanVien.TabIndex = 23;
             this.dgvNhanVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhanVien_CellClick);
             // 
@@ -347,6 +347,18 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Nhân Viên";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // btnMaNV
+            // 
+            this.btnMaNV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMaNV.Location = new System.Drawing.Point(294, 28);
+            this.btnMaNV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnMaNV.Name = "btnMaNV";
+            this.btnMaNV.Size = new System.Drawing.Size(72, 26);
+            this.btnMaNV.TabIndex = 32;
+            this.btnMaNV.Text = "....";
+            this.btnMaNV.UseVisualStyleBackColor = true;
+            this.btnMaNV.Click += new System.EventHandler(this.btnMaNV_Click);
             // 
             // groupBox2
             // 
@@ -445,18 +457,6 @@
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
-            // btnMaNV
-            // 
-            this.btnMaNV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMaNV.Location = new System.Drawing.Point(294, 28);
-            this.btnMaNV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnMaNV.Name = "btnMaNV";
-            this.btnMaNV.Size = new System.Drawing.Size(72, 26);
-            this.btnMaNV.TabIndex = 32;
-            this.btnMaNV.Text = "....";
-            this.btnMaNV.UseVisualStyleBackColor = true;
-            this.btnMaNV.Click += new System.EventHandler(this.btnMaNV_Click);
-            // 
             // UCNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -471,7 +471,7 @@
             this.ForeColor = System.Drawing.Color.Blue;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UCNhanVien";
-            this.Size = new System.Drawing.Size(1132, 801);
+            this.Size = new System.Drawing.Size(1144, 801);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

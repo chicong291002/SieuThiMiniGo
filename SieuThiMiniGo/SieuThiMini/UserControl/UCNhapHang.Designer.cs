@@ -80,6 +80,11 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.btnTimKiem = new System.Windows.Forms.Button();
+            this.dtNgayKetThuc = new System.Windows.Forms.DateTimePicker();
+            this.dtNgayBatDau = new System.Windows.Forms.DateTimePicker();
             this.btnInAn = new System.Windows.Forms.Button();
             this.dtNgayLap = new System.Windows.Forms.TextBox();
             this.table_PN = new System.Windows.Forms.DataGridView();
@@ -96,11 +101,6 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.dtNgayBatDau = new System.Windows.Forms.DateTimePicker();
-            this.dtNgayKetThuc = new System.Windows.Forms.DateTimePicker();
-            this.btnTimKiem = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -446,7 +446,7 @@
             // 
             // txtSoLuongNhap
             // 
-            this.txtSoLuongNhap.Location = new System.Drawing.Point(430, 33);
+            this.txtSoLuongNhap.Location = new System.Drawing.Point(414, 31);
             this.txtSoLuongNhap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSoLuongNhap.Multiline = true;
             this.txtSoLuongNhap.Name = "txtSoLuongNhap";
@@ -465,7 +465,7 @@
             // 
             // txtGiaNhap
             // 
-            this.txtGiaNhap.Location = new System.Drawing.Point(430, 86);
+            this.txtGiaNhap.Location = new System.Drawing.Point(414, 87);
             this.txtGiaNhap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtGiaNhap.Multiline = true;
             this.txtGiaNhap.Name = "txtGiaNhap";
@@ -676,6 +676,52 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Phiếu Nhập";
             // 
+            // label17
+            // 
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.label17.Location = new System.Drawing.Point(342, 206);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(73, 24);
+            this.label17.TabIndex = 21;
+            this.label17.Text = "Đến";
+            // 
+            // label9
+            // 
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.label9.Location = new System.Drawing.Point(91, 206);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(63, 36);
+            this.label9.TabIndex = 20;
+            this.label9.Text = "Từ";
+            // 
+            // btnTimKiem
+            // 
+            this.btnTimKiem.Location = new System.Drawing.Point(240, 250);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.Size = new System.Drawing.Size(132, 42);
+            this.btnTimKiem.TabIndex = 19;
+            this.btnTimKiem.Text = "Tìm";
+            this.btnTimKiem.UseVisualStyleBackColor = true;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
+            // 
+            // dtNgayKetThuc
+            // 
+            this.dtNgayKetThuc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtNgayKetThuc.Location = new System.Drawing.Point(420, 206);
+            this.dtNgayKetThuc.Name = "dtNgayKetThuc";
+            this.dtNgayKetThuc.Size = new System.Drawing.Size(149, 24);
+            this.dtNgayKetThuc.TabIndex = 18;
+            // 
+            // dtNgayBatDau
+            // 
+            this.dtNgayBatDau.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtNgayBatDau.Location = new System.Drawing.Point(160, 206);
+            this.dtNgayBatDau.Name = "dtNgayBatDau";
+            this.dtNgayBatDau.Size = new System.Drawing.Size(155, 24);
+            this.dtNgayBatDau.TabIndex = 17;
+            // 
             // btnInAn
             // 
             this.btnInAn.Image = global::SieuThiMini.Properties.Resources.printer;
@@ -805,52 +851,6 @@
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // dtNgayBatDau
-            // 
-            this.dtNgayBatDau.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtNgayBatDau.Location = new System.Drawing.Point(160, 206);
-            this.dtNgayBatDau.Name = "dtNgayBatDau";
-            this.dtNgayBatDau.Size = new System.Drawing.Size(155, 24);
-            this.dtNgayBatDau.TabIndex = 17;
-            // 
-            // dtNgayKetThuc
-            // 
-            this.dtNgayKetThuc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtNgayKetThuc.Location = new System.Drawing.Point(420, 206);
-            this.dtNgayKetThuc.Name = "dtNgayKetThuc";
-            this.dtNgayKetThuc.Size = new System.Drawing.Size(149, 24);
-            this.dtNgayKetThuc.TabIndex = 18;
-            // 
-            // btnTimKiem
-            // 
-            this.btnTimKiem.Location = new System.Drawing.Point(240, 250);
-            this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(132, 42);
-            this.btnTimKiem.TabIndex = 19;
-            this.btnTimKiem.Text = "Tìm";
-            this.btnTimKiem.UseVisualStyleBackColor = true;
-            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
-            // 
-            // label9
-            // 
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.label9.Location = new System.Drawing.Point(91, 206);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(63, 36);
-            this.label9.TabIndex = 20;
-            this.label9.Text = "Từ";
-            // 
-            // label17
-            // 
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.label17.Location = new System.Drawing.Point(342, 206);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(73, 24);
-            this.label17.TabIndex = 21;
-            this.label17.Text = "Đến";
             // 
             // UCNhapHang
             // 

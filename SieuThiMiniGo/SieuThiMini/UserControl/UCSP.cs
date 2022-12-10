@@ -465,5 +465,17 @@ namespace SieuThiMini
         {
             txtMaLoai.Text = "L" + dgvLoaiSanPham.Rows.Count;
         }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            if (float.Parse(txtGia1.Text.Trim()) > float.Parse(txtGia2.Text.Trim()))
+            {
+                MessageBox.Show("Giá Nhập sau phải lớn hơn giá nhập trước");
+            }
+            else
+            {
+                 dgv_SanPham.DataSource = SanPhamBUS.locSPTheoGia(float.Parse(txtGia1.Text.Trim()), float.Parse(txtGia2.Text.Trim()));
+            }
+        }
     }
 }

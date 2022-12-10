@@ -48,6 +48,7 @@
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnMaTK = new System.Windows.Forms.Button();
             this.btnChonMaNV = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -55,7 +56,6 @@
             this.btnSua = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
-            this.btnMaTK = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTaiKhoan)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -193,13 +193,13 @@
             // dgvTaiKhoan
             // 
             this.dgvTaiKhoan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTaiKhoan.Location = new System.Drawing.Point(72, 503);
+            this.dgvTaiKhoan.Location = new System.Drawing.Point(20, 504);
             this.dgvTaiKhoan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvTaiKhoan.Name = "dgvTaiKhoan";
             this.dgvTaiKhoan.RowHeadersWidth = 51;
             this.dgvTaiKhoan.RowTemplate.Height = 24;
             this.dgvTaiKhoan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTaiKhoan.Size = new System.Drawing.Size(985, 230);
+            this.dgvTaiKhoan.Size = new System.Drawing.Size(1037, 230);
             this.dgvTaiKhoan.TabIndex = 18;
             this.dgvTaiKhoan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTaiKhoan_CellClick);
             // 
@@ -257,6 +257,16 @@
             this.groupBox1.TabIndex = 22;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Tài Khoản";
+            // 
+            // btnMaTK
+            // 
+            this.btnMaTK.Location = new System.Drawing.Point(338, 36);
+            this.btnMaTK.Name = "btnMaTK";
+            this.btnMaTK.Size = new System.Drawing.Size(75, 30);
+            this.btnMaTK.TabIndex = 23;
+            this.btnMaTK.Text = "...";
+            this.btnMaTK.UseVisualStyleBackColor = true;
+            this.btnMaTK.Click += new System.EventHandler(this.btnMaTK_Click);
             // 
             // btnChonMaNV
             // 
@@ -323,16 +333,6 @@
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
-            // 
-            // btnMaTK
-            // 
-            this.btnMaTK.Location = new System.Drawing.Point(338, 36);
-            this.btnMaTK.Name = "btnMaTK";
-            this.btnMaTK.Size = new System.Drawing.Size(75, 30);
-            this.btnMaTK.TabIndex = 23;
-            this.btnMaTK.Text = "...";
-            this.btnMaTK.UseVisualStyleBackColor = true;
-            this.btnMaTK.Click += new System.EventHandler(this.btnMaTK_Click);
             // 
             // UCTaiKhoan
             // 

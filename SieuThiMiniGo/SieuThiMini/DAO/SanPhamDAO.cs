@@ -30,39 +30,7 @@ namespace SieuThiMini.DAO
             return dt;
         }
         
-        
-        /*
-        public static List<SanPham> laytoanboSanPham()
-        {
-            List<SanPham> sanPhams = new List<SanPham>();
-            SqlConnection Conn = Connection.GetSqlConnection();
-            Conn.Open();
-            string query = "select * from SanPham ORDER BY MaSP ASC";
-            SqlCommand command = new SqlCommand(query, Conn);
-            SqlDataReader dataReader = command.ExecuteReader();
-            if (dataReader != null)
-            {
-                while (dataReader.Read())
-                {
-                    SanPham sp = new SanPham();
-                    sp.MaSP = dataReader.GetValue(0).ToString();
-                    sp.TenSP = dataReader.GetValue(1).ToString();
-                    sp.DonGia = dataReader.GetValue(2).ToString();
-                    sp.DonViTinh = dataReader.GetValue(3).ToString();
-                    sp.SoLuong = dataReader.GetValue(4).ToString();
-                    sp.MaLoai = dataReader.GetValue(5).ToString();
-                    sp.MaNCC = dataReader.GetValue(6).ToString();
-                    sp.Anh = Encoding.Unicode.GetBytes(dataReader.GetValue(7).ToString());
-                    
-                    sanPhams.Add(sp);
-
-                }
-            }
-            dataReader.Close();
-            Conn.Close();
-            return sanPhams;
-        }
-        */
+       
 
         [Obsolete]
         public static void insert_SP(SanPham sp)
@@ -156,6 +124,22 @@ namespace SieuThiMini.DAO
             string qry = "Select * from SanPham where MaLoai = '" + maLoai + "'";
 
             SqlCommand command = new SqlCommand(qry, sqlConnection);
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            adapter.SelectCommand = command;
+            DataTable dataTable = new DataTable();
+            adapter.Fill(dataTable);
+
+            sqlConnection.Close();
+            return dataTable;
+        }
+
+        public static DataTable locSPTheoGia(float gia1,float gia2)
+        {
+            SqlConnection sqlConnection = Connection.GetSqlConnection();
+            sqlConnection.Open();
+            String query = "SELECT * from SanPham where DonGia >= " + gia1 + " and DonGia <= " + gia2 + "";
+
+            SqlCommand command = new SqlCommand(query, sqlConnection);
             SqlDataAdapter adapter = new SqlDataAdapter();
             adapter.SelectCommand = command;
             DataTable dataTable = new DataTable();

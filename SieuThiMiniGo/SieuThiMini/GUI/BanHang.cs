@@ -88,6 +88,8 @@ namespace SieuThiMini
 
         private void btnThem_inHD_Click(object sender, EventArgs e)
         {
+
+
             HoaDonDTO hd = new HoaDonDTO();
             hd.Invoice_id = txtMaHD.Text;
             hd.Employee_id = txtMaNV_inHD.Text;
@@ -98,7 +100,7 @@ namespace SieuThiMini
             HoaDonBUS.themHD(hd);
 
             txtMaHD.Text = "";
-            txtNgayLap_inHD.Text = "";
+            //txtNgayLap_inHD.Text = "";
 
             btnDocDSHD_Click(sender, e);
 
@@ -191,6 +193,7 @@ namespace SieuThiMini
 
             tableChonHang.DataSource = SanPhamBUS.locSPTheoloai("L1");
             LocMaLoai = 1;
+            txtSoLuong_inHD.Text = "1";
             //tableChonHang.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
@@ -366,10 +369,58 @@ namespace SieuThiMini
             tableCTHD.DataSource = CTHoaDonBUS.docCTHD();
         }
 
+        public void ThongTin()
+        {
+            int index = tableGioHang.Items.Count;
+            if (index <= 0)
+            {
+                MessageBox.Show("chưa chọn hàng nào kìa");
+            }
+            else
+            {
+                ListViewItem lvi;
+
+                List<ListViewItem> dssp = new List<ListViewItem>();
+
+                int temp = tableCTHD.Rows.Count;
+                string manv = txtMaNV_inHD.Text.Trim();
+                string makh = txtMaKH_inHD.Text.Trim();
+                string ngayLap = txtNgayLap_inHD.Text.Trim();
+                MessageBox.Show(ngayLap);
+
+
+
+                    for (int i = 0; i < temp; i++)
+                    {
+                        string maHD = tableCTHD.Rows[i].Cells[2].Value.ToString();
+                        string maSP = tableCTHD.Rows[i].Cells[0].Value.ToString();
+                        string tenSP = tableCTHD.Rows[i].Cells[1].Value.ToString();
+                        int soLuong = int.Parse(tableCTHD.Rows[i].Cells[5].Value.ToString());
+                        float donGia = float.Parse(tableCTHD.Rows[i].Cells[3].Value.ToString());
+                        float thanhTien = float.Parse(tableCTHD.Rows[i].Cells[4].Value.ToString());
+                        MessageBox.Show(maHD + "=====" + maSP);
+
+                        lvi = new ListViewItem(maHD);
+                        lvi.SubItems.Add(maSP);
+                        lvi.SubItems.Add(tenSP);
+                        lvi.SubItems.Add(soLuong.ToString());
+                        lvi.SubItems.Add(donGia.ToString());
+                        lvi.SubItems.Add(thanhTien.ToString());
+                        dssp.Add(lvi);
+                    }
+            
+                FormDLG_HoaDon ctHD = new FormDLG_HoaDon();
+                ctHD.xuLyHienThiNhap(dssp,manv,makh,ngayLap);
+                ctHD.ShowDialog();
+            }
+        }
+
         private void btnXacNhan_inCTHD_Click(object sender, EventArgs e)
         {
+
             try
             {
+                ThongTin();
                 for (int i = 0; i < tableCTHD.Rows.Count; i++)
                 {
                     CTHoaDonDTO cthd = new CTHoaDonDTO();
@@ -401,7 +452,10 @@ namespace SieuThiMini
                 {
                     maSP = tableCTHD.Rows[i].Cells[0].Value.ToString();
                     maSP = maSP.Trim();
-                    soLuongSPHienTai = CTHoaDonBUS.laySLSP_old(maSP);
+                    soLuongSPHienTai 
+                        
+                        
+                        = CTHoaDonBUS.laySLSP_old(maSP);
 
                     soLuongCon = (soLuongSPHienTai - int.Parse(tableCTHD.Rows[i].Cells[5].Value.ToString()));
                     CTHoaDonBUS.suaSLSP(maSP, soLuongCon);
@@ -423,7 +477,7 @@ namespace SieuThiMini
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Xác nhận thất bại");
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -500,7 +554,7 @@ namespace SieuThiMini
             if (i >= 0)
             {
                 for (i = 0; i < tableHoaDon.Rows.Count - 1; i++)
-                {    
+                {
                     string kq = tableHoaDon.Rows[i].Cells[2].Value.ToString().Trim();
                     if (maKH.Equals(kq))
                     {
@@ -628,7 +682,7 @@ namespace SieuThiMini
         {
             tabControl1.SelectTab(1);
             btnDocDSHD_Click(sender, e);
-           
+
             txtTongTien_inHD.Text = txtTongTien_inGH.Text;
 
             //MessageBox.Show(tableGioHang.Items[0].SubItems[2].Text);
@@ -652,7 +706,12 @@ namespace SieuThiMini
 
             txtMaHD.Text = "HD" + tableHoaDon.Rows.Count;
             btnNgayLap_inHD_Click(null, null);
-            
+
+
+
+
+
+
             //Tao ma hoa don tu dong
             /*
             string ktn, s;
@@ -716,7 +775,7 @@ namespace SieuThiMini
             {
 
                 ListViewItem listView = tableGioHang.SelectedItems[0];
-              
+
                 string kq = txtSoLuong_inGiohang.Text.Trim();
 
                 if (int.Parse(kq) <= 0)
